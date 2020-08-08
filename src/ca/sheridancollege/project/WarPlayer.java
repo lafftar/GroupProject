@@ -6,20 +6,15 @@ package ca.sheridancollege.project;
  */
 public class WarPlayer extends Player {
 
-    /**
-     * playerDeck - player's hand of cards
-     */
-    private PlayerDeck deck;
-    /**
-     * score - how many rounds the player won
-     */
-    private int score;
-    /**
-     * stats - how many games the player won
-     *
-     */
-    private double stats;
-
+    // playerDeck - player's hand of cards
+    private PlayerDeck hand = new PlayerDeck();
+    
+    // score - how many rounds the player won
+    private int score = 0;
+    
+    // percentage of games won
+    private double stats = 0;
+    
     public PlayerDeck getDeck() {
         return this.deck;
     }
