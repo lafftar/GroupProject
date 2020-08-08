@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * @author OtherUser
  */
 public class WarGroupOfCards extends GroupOfCards {
-    
+
     public WarGroupOfCards(int size) {
         super(size);
         assembleCards();
-        shuffle();
+//        shuffle();
     }
-    
+
     public void assembleCards() {
         // Assembling the deck from the cards created in the Card class 
         for (Suit suit : Suit.values()) {
@@ -27,17 +27,31 @@ public class WarGroupOfCards extends GroupOfCards {
             }
         }
     }
-    
+
     /**
-     * This removes card from the index of 
-     * 
+     * This removes card from the index of
+     *
      */
-    public void removeCardsFromDeck(ArrayList<WarCard> deck) {
+    public void removeCardsFromDeck(ArrayList<Card> deck) {
         deck.remove(0);
     }
-    
-    public void deal() {
-        
+
+    /**
+     * This method deals the mainDeck to the player's deck.
+     * 
+     * @param mainDeck
+     * @param p 
+     */
+    public void dealToPlayerDeck(ArrayList<Card> mainDeck, PlayerDeck p) {
+        // Add 26 cards to player deck
+        for (int i = 0; i < p.getSize(); i++) {
+            p.addCardToPlayerDeck(this.getCards().get(i));
+        }
+
+        // Remove the same 26 cards from main deck
+        for (int i = 0; i < p.getSize(); i++) {
+            removeCardsFromDeck(mainDeck);
+        }
     }
-       
+
 }
