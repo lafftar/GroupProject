@@ -1,11 +1,9 @@
 package ca.sheridancollege.project;
 
 /**
- * Enum for the rank of a war card. example: JACK ("Jack", 11), QUEEN ("Queen",
- * 12), KING ("King", 13);
+ * Enumeration for the rank of a War Card.
  *
- * hey
- *
+ * @author Ashley Sun
  */
 public enum Rank {
     ONE("One", 1),
@@ -22,30 +20,33 @@ public enum Rank {
     QUEEN("Queen", 12),
     KING("King", 13);
 
-    /**
-     *
-     * displayRank : String, a string representation of the rank i.e., "Jack
-     *
-     */
+    //user-friendly format of rank
     private String displayRank;
-    /**
-     *
-     * rankNumber : int, the actual value of the rank; to be used in the logic
-     * of the game i.e., 11
-     *
-     */
+    
+    //the actual number assigned to the rank
     private int rankNumber;
 
+    /**
+    * Retrieve the String of this rank.
+    *
+    * @return displayRank
+    */
     public String getDisplayRank() {
         return this.displayRank;
     }
 
+    /**
+    * Retrieve the number assigned to this rank.
+    * 
+    * @return rankNumber
+    */
     public int getRankNumber() {
         return this.rankNumber;
     }
 
     /**
-     *
+     * Private constructor, not to be instantiated outside of enum class.
+     * 
      * @param rank
      * @param rankNum
      */
@@ -55,31 +56,3 @@ public enum Rank {
     }
 
 }
-//=======
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package ca.sheridancollege.project;
-//
-///**
-// *
-// * @author OtherUser
-// */
-//public enum Rank {
-//    TWO,
-//    THREE,
-//    FOUR,
-//    FIVE,
-//    SIX,
-//    SEVEN,
-//    EIGHT,
-//    NINE,
-//    TEN,
-//    JACK,
-//    QUEEN,
-//    KING,
-//    ACE
-//}
-//>>>>>>> BryanAcorda
