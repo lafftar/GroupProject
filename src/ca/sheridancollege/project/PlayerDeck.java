@@ -10,8 +10,9 @@ public class PlayerDeck extends WarGroupOfCards {
     private ArrayList<Card> playerDeck = new ArrayList(26);
     private String nameOfDeck;
 
-    public PlayerDeck(int size) {
+    public PlayerDeck(int size, String nameOfDeck) {
         super(size);
+        this.nameOfDeck = nameOfDeck;
     }
    
     public ArrayList<Card> getPlayerDeck() {
@@ -36,10 +37,10 @@ public class PlayerDeck extends WarGroupOfCards {
 
     /**
      *
-     * @param njameOfDeck
+     * @param nameOfDeck
      */
-    public void setNameOfDeck(String njameOfDeck) {
-        this.nameOfDeck = njameOfDeck;
+    public void setNameOfDeck(String nameOfDeck) {
+        this.nameOfDeck = nameOfDeck;
     }
     
     /**
@@ -50,5 +51,8 @@ public class PlayerDeck extends WarGroupOfCards {
         this.playerDeck.add(card);
     }
     
+    public String toString() {
+        return this.getNameOfDeck() + "";
+    }
     
 }

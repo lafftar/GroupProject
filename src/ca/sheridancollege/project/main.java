@@ -30,8 +30,10 @@ public class main {
                 + "to each player\n");
         
         // Create objects of both players
-        PlayerDeck p1 = new PlayerDeck(26);
-        PlayerDeck p2 = new PlayerDeck(26);
+        String name1 = "Player1";
+        String name2 = "Player12";
+        PlayerDeck p1 = new PlayerDeck(26, name1);
+        PlayerDeck p2 = new PlayerDeck(26, name2);
         
         
 

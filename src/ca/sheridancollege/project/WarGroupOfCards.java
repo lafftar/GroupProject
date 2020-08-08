@@ -16,7 +16,7 @@ public class WarGroupOfCards extends GroupOfCards {
     public WarGroupOfCards(int size) {
         super(size);
         assembleCards();
-//        shuffle();
+        shuffle();
     }
     
     public void assembleCards() {
@@ -34,6 +34,10 @@ public class WarGroupOfCards extends GroupOfCards {
      */
     public void removeCardsFromDeck(ArrayList<Card> deck) {
         deck.remove(0);
+    }
+    
+    public void deal() {
+        
     }
        
 }
