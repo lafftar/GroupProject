@@ -10,6 +10,7 @@ package ca.sheridancollege.project;
  * @author OtherUser
  */
 public class WarCard extends Card {
+    
 
     enum Suit {
         CLUBS,
