@@ -10,10 +10,6 @@ public class PlayerDeck extends WarDeck {
     private ArrayList<WarCard> playerDeck = new ArrayList(26);
     private String nameOfDeck;
 
-    public PlayerDeck(int size) {
-        super(size);
-    }
-
     public ArrayList<WarCard> getPlayerDeck() {
         return this.playerDeck;
     }
