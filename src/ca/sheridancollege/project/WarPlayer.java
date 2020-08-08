@@ -76,7 +76,7 @@ public class WarPlayer extends Player {
      * 
      * @return the stats the players game
      */
-    public String calcStats() {
+    public String getStats() {
         return String.format("%d : %d", wins, losses);
     }
 
