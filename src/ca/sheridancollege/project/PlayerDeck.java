@@ -7,12 +7,11 @@ import java.util.ArrayList;
  */
 public class PlayerDeck extends WarDeck {
 
-    private ArrayList<Card> playerDeck;
+    private ArrayList<Card> playerDeck = new ArrayList(26);
     private String nameOfDeck;
 
     public PlayerDeck(int size) {
         super(size);
-        playerDeck = new ArrayList(this.getSize());
     }
    
     public ArrayList<Card> getPlayerDeck() {
@@ -23,14 +22,14 @@ public class PlayerDeck extends WarDeck {
      *
      * @param playerDeck
      */
-    public void setPlayerDeck(ArrayList<Card> cards) {
-        
-        for (Card card : cards) {
-            playerDeck.add(card);
-            cards.remove(card);
-        }
+    public void setPlayerDeck(ArrayList<Card> playerDeck) {
+        this.playerDeck = playerDeck;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public String getNameOfDeck() {
         return this.nameOfDeck;
     }
@@ -42,5 +41,14 @@ public class PlayerDeck extends WarDeck {
     public void setNameOfDeck(String njameOfDeck) {
         this.nameOfDeck = njameOfDeck;
     }
-
+    
+    /**
+     * 
+     * 
+     */
+    public void addCardsToPlayerDeck(Card card) {
+        this.playerDeck.add(card);
+    }
+    
+    
 }

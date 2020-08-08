@@ -13,33 +13,43 @@ public class main {
 
     public static void main(String[] args) {
 
-        try {
-            WarDeck deck = new WarDeck(52);
-            deck.getCards();
+        WarDeck deck = new WarDeck(52);
 
-//        for (Card cards : deck.getCards()) {
-//            System.out.println(cards);
-//        }
-            PlayerDeck p1 = new PlayerDeck(26);
-            PlayerDeck p2 = new PlayerDeck(26);
+        PlayerDeck p1 = new PlayerDeck(26);
+        PlayerDeck p2 = new PlayerDeck(26);
 
-            p1.setPlayerDeck(deck.getCards());
-            p2.setPlayerDeck(deck.getCards());
-
-            System.out.println("Player 1: ");
-            for (Card card : p1.getPlayerDeck()) {
-                System.out.println(card);
-            }
-
-            System.out.println("");
-
-            System.out.println("Player 2: ");
-            for (Card card : p2.getPlayerDeck()) {
-                System.out.println(card);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        for (int i = 0; i < p1.getSize(); i++) {
+            p1.addCardsToPlayerDeck(deck.getCards().get(i));
+            deck.getCards().remove(0);
         }
+        
+//        for (int i = 0; i < p1.getSize(); i++) {
+//            p2.addCards(deck.getCards().get(i));
+//            deck.getCards().remove(i);
+//        }
+        
+        System.out.println("Player 1 Deck: ");
+        for (Card card : p1.getPlayerDeck()) {
+            System.out.println(card);
+        }
+        
+//        System.out.println("\n\n");
+//        System.out.println("Player 2 Deck: ");
+//        for (Card card : p2.getPlayerDeck()) {
+//            System.out.println(card);
+//        }
+        
+        
 
+       
+        
+        System.out.println("\nNumber of cards in main Deck: ");
+        System.out.println(deck.getCards().size());
+        
+        System.out.println("\nNumber of cards in player1 deck:");
+        System.out.println(p1.getPlayerDeck().size());
+        
+        System.out.println("\nNumber of cards in player2 deck:");
+        System.out.println(p2.getPlayerDeck().size());
     }
 }

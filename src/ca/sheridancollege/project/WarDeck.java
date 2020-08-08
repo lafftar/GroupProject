@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author OtherUser
@@ -24,6 +26,14 @@ public class WarDeck extends GroupOfCards {
                 this.getCards().add(new WarCard(rank, suit));
             }
         }
+    }
+    
+    /**
+     * This removes card from the index of 
+     * 
+     */
+    public void removeCardsFromDeck(ArrayList<Card> deck) {
+        deck.remove(0);
     }
        
 }
