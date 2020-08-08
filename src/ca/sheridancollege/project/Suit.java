@@ -4,7 +4,7 @@ package ca.sheridancollege.project;
  *
  * Enum for the suit of a war card. displaySuit : String, a string
  * representation of the suit i.e., "Spades"
- *
+ * Created enum
  */
 public enum Suit {
     CLUBS,
