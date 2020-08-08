@@ -19,9 +19,7 @@ public class MainTJTesting {
 //        WarGroupOfCards allCards = new WarGroupOfCards(52);
         GroupOfCards allCards = new GroupOfCards(52);
         ArrayList<Card> cards = allCards.getCards();
-
-        System.out.println(Rank.EIGHT.getRankNumber());
-
+        System.out.println(Rank.EIGHT);
 //        cards.add(Card(1));
 //        System.out.println(allCards.getCards());
 //        for (Suit suit : Suit.values()) {
@@ -34,6 +32,7 @@ public class MainTJTesting {
 //            System.out.println(String.format("Jack %s", suit));
 //            System.out.println("-------------------------------------------------------------");
 //        }
+
     }
 
 }

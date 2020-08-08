@@ -2,51 +2,53 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 
-public class PlayerDeck extends GroupOfCards {
+/**
+ * @author OtherUser
+ */
+public class PlayerDeck extends WarDeck {
 
-    private ArrayList<WarCard> playerDeck;
-    private String nameofDeck;
+    private ArrayList<Card> playerDeck = new ArrayList(26);
+    private String nameOfDeck;
 
-    public ArrayList<WarCard> getPlayerDeck() {
+    public PlayerDeck(int size) {
+        super(size);
+    }
+   
+    public ArrayList<Card> getPlayerDeck() {
         return this.playerDeck;
     }
-
+    
     /**
      *
      * @param playerDeck
      */
-    public void setPlayerDeck(ArrayList<WarCard> playerDeck) {
+    public void setPlayerDeck(ArrayList<Card> playerDeck) {
         this.playerDeck = playerDeck;
     }
 
-    public String getNameofDeck() {
-        return this.nameofDeck;
+    /**
+     * 
+     * @return 
+     */
+    public String getNameOfDeck() {
+        return this.nameOfDeck;
     }
 
     /**
      *
-     * @param nameofDeck
+     * @param njameOfDeck
      */
-    public void setNameofDeck(String nameofDeck) {
-        this.nameofDeck = nameofDeck;
+    public void setNameOfDeck(String njameOfDeck) {
+        this.nameOfDeck = njameOfDeck;
     }
-
+    
     /**
-     * use method to remove specific cards from the playerDeck -- not sure how
-     * to implement this method
+     * 
+     * 
      */
-    public void removeCards() {
-        // TODO - implement PlayerDeck.removeCards
-        throw new UnsupportedOperationException();
+    public void addCardsToPlayerDeck(Card card) {
+        this.playerDeck.add(card);
     }
-
-    /**
-     * use method to add specific cards to the playerDeck -- not sure how to
-     * implement this method
-     */
-    public void addCards() {
-        // TODO - implement PlayerDeck.addCards
-        throw new UnsupportedOperationException();
-    }
-
+    
+    
 }
