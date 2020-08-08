@@ -12,16 +12,23 @@ import java.util.ArrayList;
 /**
  * The class that models your game. You should create a more specific child of this class and instantiate the methods
  * given.
- *
+ * 
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * 
+ * the Game constructor is protected so it can only be instantiated by it's child class, WarGame
+ * @author Ashley Sun, Aug 2020
+ *  
  */
 public abstract class Game {
 
     private final String name;//the title of the game
-    private ArrayList<Player> players;// the players of the game
+    private ArrayList<Player> players;/**
+     * the players of the game
+     * @param name
+     */
 
-    public Game(String name) {
+    protected Game(String name) {
         this.name = name;
         players = new ArrayList();
     }
