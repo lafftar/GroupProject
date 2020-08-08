@@ -1,9 +1,7 @@
 package ca.sheridancollege.project;
 
 /**
- *
- * Enum for the suit of a war card. displaySuit : String, a string
- * representation of the suit i.e., "Spades" Created enum
+ * Enumeration for the suit of a war card.
  *
  * @author Ashley Sun
  */
@@ -13,14 +11,21 @@ public enum Suit {
     DIAMONDS("Diamonds"),
     SPADES("Spades");
 
+    //A String representation of the suit
     private String displaySuit;
 
+    /**
+    * Retrieve the String representation of this suit
+    *
+    * @return displaySuit
+    */
     public String getDisplaySuit() {
         return this.displaySuit;
     }
 
     /**
-     *
+     * Private constructor, is not instantiated outside of enum class.
+     * 
      * @param suit
      */
     private Suit(String suit) {
