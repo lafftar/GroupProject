@@ -11,30 +11,6 @@ package ca.sheridancollege.project;
  */
 public class WarCard extends Card {
     
-
-    enum Suit {
-        CLUBS,
-        DIAMONDS,
-        HEARTS,
-        SPADES
-    }
-
-    enum Rank {
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        TEN,
-        JACK,
-        QUEEN,
-        KING,
-        ACE
-    }
-    
     private Suit suit;
     private Rank rank;
 

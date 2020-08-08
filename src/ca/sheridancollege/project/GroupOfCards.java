@@ -7,8 +7,6 @@
  */
 package ca.sheridancollege.project;
 
-import ca.sheridancollege.project.WarCard.Rank;
-import ca.sheridancollege.project.WarCard.Suit;
 import java.util.ArrayList;
 import java.util.Collections;
 
