@@ -47,7 +47,7 @@ public class PlayerDeck extends WarDeck {
      *
      * @param card
      */
-    public void addCardsToPlayerDeck(WarCard card) {
+    public void addCardToPlayerDeck(WarCard card) {
         this.playerDeck.add(card);
     }
 
