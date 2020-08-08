@@ -1,51 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ca.sheridancollege.project;
 
 /**
- * suit of type Suit enum rank of type Rank enum makes a war card with specific
- * suit and rank
  *
+ * @author OtherUser
  */
 public class WarCard extends Card {
-
+    
     private Suit suit;
     private Rank rank;
 
-    /**
-     *
-     * @param suit
-     * @param rank
-     */
-    public WarCard(Suit suit, Rank rank) {
-        // TODO - implement WarCard.WarCard
-        throw new UnsupportedOperationException();
+    public WarCard(Rank r, Suit s) {
+        rank = r;
+        suit = s;
     }
 
     public Suit getSuit() {
-        return this.suit;
-    }
-
-    /**
-     *
-     * @param suit
-     */
-    public void setSuit(Suit suit) {
-        this.suit = suit;
+        return suit;
     }
 
     public Rank getRank() {
-        return this.rank;
-    }
-
-    /**
-     *
-     * @param rank
-     */
-    public void setRank(Rank rank) {
-        this.rank = rank;
-    }
-
+        return rank;
+    }   
+   
     @Override
     public String toString() {
-        return "";
+        return this.getRank() + " of " + this.getSuit();
     }
 }
