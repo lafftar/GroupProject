@@ -9,9 +9,12 @@ package ca.sheridancollege.project;
 
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
- *
+ * 
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * 
+ * the Player constructor is protected so it can only be instantiated by it's child class, WarPlayer
+ * @author Ashley Sun, Aug 2020
  */
 public abstract class Player {
 
@@ -19,10 +22,9 @@ public abstract class Player {
 
     /**
      * A constructor that allows you to set the player's unique ID
-     *
      * @param name the unique ID to assign to this player.
      */
-    public Player(String name) {
+    protected Player(String name) {
         this.name = name;
     }
 
