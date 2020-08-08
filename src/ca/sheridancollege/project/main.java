@@ -14,13 +14,14 @@ public class main {
     public static void main(String[] args) {
 
         // Create a main playing deck
-        WarDeck deck = new WarDeck(52);
+        WarGroupOfCards deck = new WarGroupOfCards(52);
         // shuffle
         deck.shuffle();
         
         System.out.println("This is the main deck");
         System.out.println("The main deck has " + deck.getCards().size() + " cards");
         System.out.println("");
+        
         for (Card card : deck.getCards()) {
             System.out.println(card);
         }

@@ -11,9 +11,9 @@ import java.util.ArrayList;
  *
  * @author OtherUser
  */
-public class WarDeck extends GroupOfCards {
+public class WarGroupOfCards extends GroupOfCards {
     
-    public WarDeck(int size) {
+    public WarGroupOfCards(int size) {
         super(size);
         assembleCards();
 //        shuffle();
@@ -23,7 +23,7 @@ public class WarDeck extends GroupOfCards {
         // Assembling the deck from the cards created in the Card class 
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
-//                this.getCards().add(new WarCard(rank, suit));
+                this.getCards().add(new WarCard(suit, rank));
             }
         }
     }
