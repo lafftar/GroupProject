@@ -3,15 +3,15 @@ package ca.sheridancollege.project;
 /**
  *
  * Enum for the suit of a war card. displaySuit : String, a string
- * representation of the suit i.e., "Spades"
- * Created enum
+ * representation of the suit i.e., "Spades" Created enum
+ *
  * @author Ashley Sun
  */
 public enum Suit {
     CLUBS("Clubs"),
-    HEARTS ("Hearts"),
-    DIAMONDS ("Diamonds"),
-    SPADES ("Spades");
+    HEARTS("Hearts"),
+    DIAMONDS("Diamonds"),
+    SPADES("Spades");
 
     private String displaySuit;
 
@@ -24,7 +24,7 @@ public enum Suit {
      * @param suit
      */
     private Suit(String suit) {
-        displayeSuit = suit;
+        displaySuit = suit;
     }
 
 }

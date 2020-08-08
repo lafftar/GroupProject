@@ -4,7 +4,7 @@ package ca.sheridancollege.project;
  * Models a player in the game War
  *
  */
-public class WarPlayer {
+public class WarPlayer extends Player {
 
     /**
      * playerDeck - player's hand of cards
