@@ -42,14 +42,13 @@ public enum Rank {
         return this.rankNumber;
     }
 
-    /**
-     *
-     * @param rank
-     * @param rankNum
-     */
-    private Rank(String rank, int rankNum) {
-        // TODO - implement Rank.Rank
-        throw new UnsupportedOperationException();
-    }
-
+//    /**
+//     *
+//     * @param rank
+//     * @param rankNum
+//     */
+//    private Rank(String rank, int rankNum) {
+//        this.displayRank = rank;
+//        this.rankNumber = rankNum;
+//    }
 }

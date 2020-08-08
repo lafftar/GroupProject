@@ -16,8 +16,8 @@ public class WarCard extends Card {
      * @param rank
      */
     public WarCard(Suit suit, Rank rank) {
-        // TODO - implement WarCard.WarCard
-        throw new UnsupportedOperationException();
+        this.suit = suit;
+        this.rank = rank;
     }
 
     public Suit getSuit() {

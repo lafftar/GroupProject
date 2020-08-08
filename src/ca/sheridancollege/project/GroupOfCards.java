@@ -1,9 +1,7 @@
 /**
  * SYST 17796 Project Base code.
- *
- * Date: 06-09-2020
- *
- * @Author Bryan Acorda Group 3
+ * Students can modify and extend to implement their game.
+ * Add your name as an author and the date!
  */
 package ca.sheridancollege.project;
 
@@ -11,9 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * A concrete class that represents any grouping of cards for a Game. HINT, you
- * might want to subclass this more than once. The group of cards has a maximum
- * size attribute which is flexible for reuse.
+ * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
+ * once. The group of cards has a maximum size attribute which is flexible for reuse.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
@@ -36,8 +33,6 @@ public class GroupOfCards {
     public ArrayList<Card> getCards() {
         return cards;
     }
-
-    ;
 
     public void shuffle() {
         Collections.shuffle(cards);

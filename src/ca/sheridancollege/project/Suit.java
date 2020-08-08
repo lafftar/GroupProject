@@ -22,9 +22,8 @@ public enum Suit {
      *
      * @param suit
      */
-    private Suit(String suit) {
-        // TODO - implement Suit.Suit
-        throw new UnsupportedOperationException();
-    }
-
+//    private Suit() {
+//        // TODO - implement Suit.Suit
+//        throw new UnsupportedOperationException();
+//    }
 }
