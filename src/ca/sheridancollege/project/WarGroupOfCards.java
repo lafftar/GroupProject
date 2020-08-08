@@ -32,7 +32,7 @@ public class WarGroupOfCards extends GroupOfCards {
      * This removes card from the index of 
      * 
      */
-    public void removeCardsFromDeck(ArrayList<Card> deck) {
+    public void removeCardsFromDeck(ArrayList<WarCard> deck) {
         deck.remove(0);
     }
     

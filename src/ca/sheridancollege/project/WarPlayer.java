@@ -15,6 +15,10 @@ public class WarPlayer extends Player {
     // percentage of games won
     private double stats = 0;
 
+    public WarPlayer(String name) {
+        super(name);
+    }
+
     public PlayerDeck getDeck() {
         return this.deck;
     }
