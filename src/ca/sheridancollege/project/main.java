@@ -13,11 +13,32 @@ public class main {
 
     public static void main(String[] args) {
 
-        WarDeck deck = new WarDeck(52);
-        deck.getCards();
+        try {
+            WarDeck deck = new WarDeck(52);
+            deck.getCards();
 
-        for (Card cards : deck.getCards()) {
-            System.out.println(cards);
+//        for (Card cards : deck.getCards()) {
+//            System.out.println(cards);
+//        }
+            PlayerDeck p1 = new PlayerDeck(26);
+            PlayerDeck p2 = new PlayerDeck(26);
+
+            p1.setPlayerDeck(deck.getCards());
+            p2.setPlayerDeck(deck.getCards());
+
+            System.out.println("Player 1: ");
+            for (Card card : p1.getPlayerDeck()) {
+                System.out.println(card);
+            }
+
+            System.out.println("");
+
+            System.out.println("Player 2: ");
+            for (Card card : p2.getPlayerDeck()) {
+                System.out.println(card);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
     }

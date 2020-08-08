@@ -9,11 +9,12 @@ package ca.sheridancollege.project;
  *
  * @author OtherUser
  */
-public final class WarDeck extends GroupOfCards {
+public class WarDeck extends GroupOfCards {
     
     public WarDeck(int size) {
         super(size);
         assembleCards();
+//        shuffle();
     }
     
     public void assembleCards() {
@@ -24,5 +25,5 @@ public final class WarDeck extends GroupOfCards {
             }
         }
     }
-    
+       
 }
