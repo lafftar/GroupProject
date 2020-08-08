@@ -13,7 +13,7 @@ public class main {
 
     public static void main(String[] args) {
 
-        GroupOfCards deck = new GroupOfCards(52);
+        WarDeck deck = new WarDeck(52);
         deck.getCards();
 
         for (Card cards : deck.getCards()) {

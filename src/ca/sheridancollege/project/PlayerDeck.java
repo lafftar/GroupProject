@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class PlayerDeck extends GroupOfCards {
 
-    int playerDeckSize = 26;
+    int playerDeckSize;
     private ArrayList<Card> playerDeck;
     private String nameOfDeck;
 

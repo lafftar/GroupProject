@@ -26,7 +26,6 @@ public class GroupOfCards {
     public GroupOfCards(int size) {
         cards = new ArrayList();
         this.size = size;
-        assembleCards();
     }
 
     /**
@@ -38,15 +37,7 @@ public class GroupOfCards {
         return cards;
     }
     
-    public void assembleCards() {
-        // Assembling the deck from the cards created in the Card class 
-        for (Suit suit : Suit.values()) {
-            for (Rank rank : Rank.values()) {
-                cards.add(new WarCard(rank, suit));
-            }
-        }
-    }
-
+    
     public void shuffle() {
         Collections.shuffle(cards);
     }
