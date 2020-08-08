@@ -5,21 +5,15 @@ import java.util.ArrayList;
 /**
  * @author OtherUser
  */
-public class PlayerDeck extends WarGroupOfCards {
+public class PlayerDeck extends WarDeck {
 
     private ArrayList<WarCard> playerDeck = new ArrayList(26);
     private String nameOfDeck;
 
-    public PlayerDeck(int size, String nameOfDeck) {
-        super(size);
-        this.nameOfDeck = nameOfDeck;
-    }
-
-   
     public ArrayList<WarCard> getPlayerDeck() {
         return this.playerDeck;
     }
-    
+
     /**
      *
      * @param playerDeck
@@ -29,8 +23,8 @@ public class PlayerDeck extends WarGroupOfCards {
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public String getNameOfDeck() {
         return this.nameOfDeck;
@@ -43,17 +37,24 @@ public class PlayerDeck extends WarGroupOfCards {
     public void setNameOfDeck(String nameOfDeck) {
         this.nameOfDeck = nameOfDeck;
     }
-    
+
     /**
-     * 
-     * 
+     *
+     *
+     * @param card
      */
-    public void addCardsToPlayerDeck(WarCard card) {
+    public void addCardToPlayerDeck(WarCard card) {
         this.playerDeck.add(card);
     }
-    
-    public String toString() {
-        return this.getNameOfDeck() + "";
+
+    /**
+     * Returns the card at the specific index
+     *
+     * @param cardIndex
+     * @return the specific war card
+     */
+    public WarCard getCardFromDeck(int cardIndex) {
+        return this.playerDeck.get(cardIndex);
     }
-    
+
 }
