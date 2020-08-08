@@ -16,7 +16,6 @@ public class main {
         // Create a main playing deck
         WarGroupOfCards deck = new WarGroupOfCards(52);
         // shuffle
-        deck.shuffle();
         
         System.out.println("This is the main deck");
         System.out.println("The main deck has " + deck.getCards().size() + " cards");
@@ -35,28 +34,9 @@ public class main {
         PlayerDeck p1 = new PlayerDeck(26, name1);
         PlayerDeck p2 = new PlayerDeck(26, name2);
         
-        
+        deck.dealToPlayerDeck(deck.getCards(), p1);
+        deck.dealToPlayerDeck(deck.getCards(), p2);
 
-        // Add 26 cards to p1 deck
-        for (int i = 0; i < p1.getSize(); i++) {
-            p1.addCardsToPlayerDeck(deck.getCards().get(i));
-        }
-        
-        // Remove the same 26 cards from main deck
-        for (int i = 0; i < p1.getSize(); i++) {
-            deck.getCards().remove(0);
-        }
-        
-        // Add 26 cards to p2 deck
-        for (int i = 0; i < p2.getSize(); i++) {
-            p2.addCardsToPlayerDeck(deck.getCards().get(i));
-            
-        }
-        
-        //// Remove the same 26 cards from main deck
-        for (int i = 0; i < p2.getSize(); i++) {
-            deck.getCards().remove(0);
-        }
         
         System.out.println("Player 1 Deck: ");
         for (Card card : p1.getPlayerDeck()) {
