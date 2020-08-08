@@ -3,6 +3,8 @@ package ca.sheridancollege.project;
 /**
  * Enum for the rank of a war card. example: JACK ("Jack", 11), QUEEN ("Queen",
  * 12), KING ("King", 13);
+ * 
+ * hey
  *
  */
 public enum Rank {
