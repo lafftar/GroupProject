@@ -19,7 +19,6 @@ public class Main {
 //        WarGroupOfCards allCards = new WarGroupOfCards(52);
         GroupOfCards allCards = new GroupOfCards(52);
         ArrayList<Card> cards = allCards.getCards();
-//        System.out.println(cards);
         System.out.println(Rank.EIGHT);
 //        cards.add(Card(1));
 //        System.out.println(allCards.getCards());
