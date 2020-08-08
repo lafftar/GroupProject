@@ -19,6 +19,10 @@ public class WarPlayer extends Player {
     // # of games lost
     private int losses = 0;
 
+    public WarPlayer(String name) {
+        super(name);
+    }
+
     public PlayerDeck getDeck() {
         return this.deck;
     }
@@ -76,7 +80,7 @@ public class WarPlayer extends Player {
      * 
      * @return the stats the players game
      */
-    public String calcStats() {
+    public String getStats() {
         return String.format("%d : %d", wins, losses);
     }
 

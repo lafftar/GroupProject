@@ -46,6 +46,6 @@ public class WarCard extends Card {
 
     @Override
     public String toString() {
-        return String.format("%s of %s", rank.getDisplayRank(), suit.getDisplaySuit());
+        return this.getRank() + " of " + this.getSuit();
     }
 }
