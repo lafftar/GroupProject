@@ -12,8 +12,11 @@ public class WarPlayer extends Player {
     // score - how many rounds the player won
     private int score = 0;
 
-    // percentage of games won
-    private double stats = 0;
+    // # of games won
+    private int wins = 0;
+
+    // # of games lost
+    private int losses = 0;
 
     public PlayerDeck getDeck() {
         return this.deck;
@@ -47,29 +50,35 @@ public class WarPlayer extends Player {
     public void setScore(int score) {
         this.score = score;
     }
+    
+    // getter and setter for wins and losses
+    public int getWins() {
+        return wins;
+    }
 
-    public double getStats() {
-        return this.stats;
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public void setLosses(int losses) {
+        this.losses = losses;
     }
 
     /**
-     *
-     * @param stats
+     * Returns a String representing how many games the player won vs lost.
+     * i.e., 2 : 0, is two games won and 0 games lost
+     * 
+     * @return the stats the players game
      */
-    public void setStats(double stats) {
-        this.stats = stats;
+    public String calcStats() {
+        return String.format("%d : %d", wins, losses);
     }
 
-    public void calcStats() {
-        // TODO - implement WarPlayer.calcStats
-        throw new UnsupportedOperationException();
-    }
-
-    public void calcScore() {
-        // TODO - implement WarPlayer.calcScore
-        throw new UnsupportedOperationException();
-    }
-
+    // ???
     @Override
     public void play() {
 
