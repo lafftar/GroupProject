@@ -1,17 +1,13 @@
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class WarGame extends Game {
 
     private WarPlayer player1;
     private WarPlayer player2;
-    /**
-     * the deck that is being used in the game
-     */
-    private PlayerDeck warDeck;
-    /**
-     * deck to hold cards that are discarded in the war round
-     */
-    private PlayerDeck placeholderDeck;
+    private PlayerDeck placeholderDeck; // deck to hold cards that are discarded in the war round
 
     public WarPlayer getPlayer1() {
         return this.player1;
@@ -38,7 +34,7 @@ public class WarGame extends Game {
     }
 
     public PlayerDeck getWarDeck() {
-        return this.warDeck;
+        return this.placeholderDeck; // just assuming, confirm
     }
 
     /**
@@ -46,7 +42,7 @@ public class WarGame extends Game {
      * @param warDeck
      */
     public void setWarDeck(PlayerDeck warDeck) {
-        this.warDeck = warDeck;
+        this.placeholderDeck = warDeck; // just assuming, confirm
     }
 
     /**
@@ -55,19 +51,20 @@ public class WarGame extends Game {
      *
      * @param card1
      * @param card2
+     * @return true if card values have same rank and suit, false otherwise
      */
     public boolean compareCards(WarCard card1, WarCard card2) {
-        // TODO - implement WarGame.compareCards
-        throw new UnsupportedOperationException();
+        return card1.equals(card2);
     }
 
     /**
      * initiates war takes out 4 cards from the playerDeck puts the first 3 in
      * the placeholder deck returns the last card
+     *
+     * @return
      */
     public WarCard war() {
-        // TODO - implement WarGame.war
-        throw new UnsupportedOperationException();
+        return new WarCard(Suit.CLUBS, Rank.EIGHT); // just for testing, DELETE
     }
 
     /**
@@ -95,6 +92,10 @@ public class WarGame extends Game {
 
     @Override
     public void play() {
+        /* First Round:
+                both players deal: take one card from each player, put it in the placeholder
+
+         */
 
     }
 
