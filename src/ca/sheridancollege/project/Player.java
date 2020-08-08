@@ -16,6 +16,7 @@ package ca.sheridancollege.project;
 public abstract class Player {
 
     private String name; //the unique name for this player
+    private int points;
 
     /**
      * A constructor that allows you to set the player's unique ID
@@ -41,6 +42,15 @@ public abstract class Player {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points += points;
+    }
+    
 
     /**
      * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
