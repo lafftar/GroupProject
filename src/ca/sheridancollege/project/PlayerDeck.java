@@ -47,4 +47,14 @@ public class PlayerDeck extends WarDeck {
         this.playerDeck.add(card);
     }
 
+    /**
+     * Returns the card at the specific index
+     *
+     * @param cardIndex
+     * @return the specific war card
+     */
+    public WarCard getCardFromDeck(int cardIndex) {
+        return this.playerDeck.get(cardIndex);
+    }
+
 }
