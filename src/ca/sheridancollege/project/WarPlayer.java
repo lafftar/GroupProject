@@ -31,12 +31,13 @@ public class WarPlayer extends Player {
     }
 
     /**
-     * returns a war card from the player's playerDeck arraylist
+     * Returns the first card in the player's deck.
      *
-     * @return
+     * @return a war card
      */
     public WarCard drawCard() {
-        return new WarCard(Suit.CLUBS, Rank.EIGHT); // just for testing, delete.
+        return deck.getCardFromDeck(0);
+        //return new WarCard(Suit.CLUBS, Rank.EIGHT); // just for testing, delete.
     }
 
     public int getScore() {
