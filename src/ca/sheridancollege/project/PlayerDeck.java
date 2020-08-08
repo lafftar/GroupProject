@@ -2,7 +2,7 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 
-public class PlayerDeck {
+public class PlayerDeck extends GroupOfCards {
 
     private ArrayList<WarCard> playerDeck;
     private String nameofDeck;
