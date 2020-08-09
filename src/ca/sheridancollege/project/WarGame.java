@@ -11,7 +11,7 @@ public class WarGame extends Game {
     private WarGroupOfCards allCards = new WarGroupOfCards();
     private WarPlayer player1 = new WarPlayer("Player 1");
     private WarPlayer player2 = new WarPlayer("Player 2");
-    private PlayerDeck placeholderDeck = new PlayerDeck(52); // deck to hold cards that are discarded in the war round
+    private PlayerDeck placeholderDeck = new PlayerDeck(0); // deck to hold cards that are discarded in the war round
 
     public WarGame(String name) {
         super(name);
@@ -156,6 +156,7 @@ public class WarGame extends Game {
                     player1Card = this.player1.drawCard();
                     player2Card = this.player2.drawCard();
                     if (i == 1) {
+                        // WarCard might need a better toString()
                         System.out.println("Player 1 Drew: " + player1Card);
                         System.out.println("Player 2 Drew: " + player2Card);
                     }
@@ -178,6 +179,8 @@ public class WarGame extends Game {
                     this.player2.getDeck().addCardToPlayerDeck(card);
                 }
                 this.placeholderDeck.getCards().removeAll(this.player2.getDeck().getCards());
+                // the .getSize() method only returns the size of the class at initialization, not while it's moving
+                // i've overridden the method in playerdeck
                 System.out.println(String.format("Player 1 Now Has %d cards", this.player1.getDeck().getSize()));
                 System.out.println(String.format("Player 2 Now Has %d cards", this.player2.getDeck().getSize()));
             }

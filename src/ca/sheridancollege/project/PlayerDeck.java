@@ -46,4 +46,9 @@ public class PlayerDeck extends GroupOfCards {
         return super.getCards().get(cardIndex);
     }
 
+    @Override
+    public int getSize() {
+        return super.getCards().size();
+    }
+
 }
