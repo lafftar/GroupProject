@@ -127,69 +127,74 @@ public class WarGame extends Game {
         // first we create the wargroupofcards, it's created, assembled and shuffled in the wargroupofcards class
 //        WarGroupOfCards allCards = new WarGroupOfCards();
         allCards.dealToPlayerDeck(new ArrayList<>(asList(this.player1, this.player2)));
-
-        // start game
+        // this will need to be nested further, to have support for continious play
+        while (this.player1.getDeck().getSize() > 0 && this.player2.getDeck().getSize() > 0) {
+            // start game
 //         both players deal
-        WarCard card1 = new WarCard(Suit.DIAMONDS, Rank.NINE);
-        WarCard card2 = new WarCard(Suit.CLUBS, Rank.NINE);
-        card1 = this.player1.drawCard();
-        card2 = this.player2.drawCard();
-        System.out.println("Player 1 Drew: " + card1);
-        System.out.println("Player 2 Drew: " + card2);
-        // deal the first cards,
-        // place it in the placeholder deck
-        // remove the cards from each players deck.
-        // compare the cards
+            WarCard player1Card = this.player1.drawCard();
+            WarCard player2Card = this.player2.drawCard();
+            // need to replace these 'Player 1' with the player names.
+            System.out.println("Player 1 Drew: " + player1Card);
+            System.out.println("Player 2 Drew: " + player2Card);
+            // deal the first cards,
+            // place it in the placeholder deck
+            // remove the cards from each players deck.
+            // compare the cards
 
-        // take 1 card from  each player, add to placeholder deck
-        this.placeholderDeck.addCardToPlayerDeck(card1);
-        this.placeholderDeck.addCardToPlayerDeck(card2);
-        // might benefit from having a remove card method for the player
-        // remove the card we just drew from each player
-        this.player1.getDeck().getPlayerDeck().remove(card1);
-        this.player2.getDeck().getPlayerDeck().remove(card2);
-        // while war is declared, we want the methods above to loop twice.
-        // this loop will only be entered when war is declared from first play, which is obvs the only time war can be declared
-        while (this.compareCards(card1, card2) == 3) {
-            System.out.println("War has been initiated!!!");
-            for (int i = 0; i < 2; i++) {
-                card1 = this.player1.drawCard();
-                card2 = this.player2.drawCard();
-                if (i == 1) {
-                    System.out.println("Player 1 Drew: " + card1);
-                    System.out.println("Player 2 Drew: " + card2);
+            // take 1 card from  each player, add to placeholder deck
+            this.placeholderDeck.addCardToPlayerDeck(player1Card);
+            this.placeholderDeck.addCardToPlayerDeck(player2Card);
+            // might benefit from having a remove card method for the player
+            // remove the card we just drew from each player
+            this.player1.getDeck().getPlayerDeck().remove(player1Card);
+            this.player2.getDeck().getPlayerDeck().remove(player2Card);
+            // while war is declared, we want the methods above to loop twice.
+            // this loop will only be entered when war is declared from first play, which is obvs the only time war can be declared
+            while (this.compareCards(player1Card, player2Card) == 3) {
+                System.out.println("War has been initiated!!!");
+                for (int i = 0; i < 2; i++) {
+                    player1Card = this.player1.drawCard();
+                    player2Card = this.player2.drawCard();
+                    if (i == 1) {
+                        System.out.println("Player 1 Drew: " + player1Card);
+                        System.out.println("Player 2 Drew: " + player2Card);
+                    }
+                    // take 1 card from  each player, add to placeholder deck
+                    this.placeholderDeck.addCardToPlayerDeck(player1Card);
+                    this.placeholderDeck.addCardToPlayerDeck(player2Card);
+                    // might benefit from having a remove card method for the player
+                    // remove the card we just drew from each player
+                    this.player1.getDeck().getPlayerDeck().remove(player1Card);
+                    this.player2.getDeck().getPlayerDeck().remove(player2Card);
                 }
-                // take 1 card from  each player, add to placeholder deck
-                this.placeholderDeck.addCardToPlayerDeck(card1);
-                this.placeholderDeck.addCardToPlayerDeck(card2);
-                // might benefit from having a remove card method for the player
-                // remove the card we just drew from each player
-                this.player1.getDeck().getPlayerDeck().remove(card1);
-                this.player2.getDeck().getPlayerDeck().remove(card2);
+            }
+            // super repetitive, DRY distributeWinnings()?
+            if (this.compareCards(player1Card, player2Card) == 2) { // player 2 won
+                // player 2 will have all cards in placeholder deck added to the bottom of his pile.
+                // place holder deck will be wiped.
+                System.out.println(String.format("Player %d Wins! They get %d cards",
+                        this.compareCards(player1Card, player2Card), this.placeholderDeck.getSize()));
+                for (WarCard card : this.placeholderDeck.getCards()) {
+                    this.player2.getDeck().addCardToPlayerDeck(card);
+                }
+                this.placeholderDeck.getCards().removeAll(this.player2.getDeck().getCards());
+                System.out.println(String.format("Player 1 Now Has %d cards", this.player1.getDeck().getSize()));
+                System.out.println(String.format("Player 2 Now Has %d cards", this.player2.getDeck().getSize()));
+            }
+            if (this.compareCards(player1Card, player2Card) == 1) { // player 1 won
+                // player 1 will have all cards in placeholder deck added to the bottom of his pile.
+                // place holder deck will be wiped.
+                System.out.println(String.format("Player %d Wins! They get %d cards",
+                        this.compareCards(player1Card, player2Card), this.placeholderDeck.getSize()));
+                for (WarCard card : this.placeholderDeck.getCards()) {
+                    this.player1.getDeck().addCardToPlayerDeck(card);
+                }
+                this.placeholderDeck.getCards().removeAll(this.player1.getDeck().getCards());
+                System.out.println(String.format("Player 1 Now Has %d cards", this.player1.getDeck().getSize()));
+                System.out.println(String.format("Player 2 Now Has %d cards", this.player2.getDeck().getSize()));
             }
         }
-        // super repetitive, DRY distributeWinnings()?
-        if (this.compareCards(card1, card2) == 2) { // player 2 won
-            // player 2 will have all cards in placeholder deck added to the bottom of his pile.
-            // place holder deck will be wiped.
-            System.out.println(String.format("Player %d Wins! They get %d cards",
-                    this.compareCards(card1, card2), this.placeholderDeck.getSize()));
-            for (WarCard card : this.placeholderDeck.getCards()) {
-                this.player2.getDeck().addCardToPlayerDeck(card);
-            }
-            this.placeholderDeck.getCards().removeAll(this.player2.getDeck().getCards());
-            System.out.println(String.format("Player 1 Now Has %d cards", this.player1.getDeck().getSize()));
-            System.out.println(String.format("Player 2 Now Has %d cards", this.player2.getDeck().getSize()));
-        }
-        if (this.compareCards(card1, card2) == 1) { // player 1 won
-            // player 1 will have all cards in placeholder deck added to the bottom of his pile.
-            // place holder deck will be wiped.
-            for (WarCard card : this.placeholderDeck.getCards()) {
-                this.player1.getDeck().addCardToPlayerDeck(card);
-            }
-            this.placeholderDeck.getCards().removeAll(this.player1.getDeck().getCards());
-        }
-        System.out.println(this.compareCards(card1, card2));
+
     }
 
 }
