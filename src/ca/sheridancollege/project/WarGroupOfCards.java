@@ -22,11 +22,15 @@ public class WarGroupOfCards extends GroupOfCards {
     }
 
     private void assembleCards() { // changed to private because it shouldn't be used elsewhere - TJ
+        // Create a reference for WarCard. -Bryan
+        WarCard card;
         // Assembling the deck from the cards created in the Card class
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
+                // initialized the card variable here -Bryan
+                card = new WarCard(suit, rank);
                 // would make sense to put the reference outside the for loop for performance sake - TJ
-                this.getCards().add(new WarCard(suit, rank));
+                this.getCards().add(card);
             }
         }
     }
