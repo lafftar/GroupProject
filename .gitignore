@@ -5,3 +5,5 @@
 src/ca/sheridancollege/project/Main.java
 *.xml
 /dist/
+*.xml
+*.properties
