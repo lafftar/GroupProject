@@ -104,12 +104,12 @@ public class WarGame extends Game {
          */
         Scanner in = new Scanner(System.in);
         // collect info about both players
-        System.out.println("Player 1 Name: ");
+        System.out.print("Player 1 Name: ");
         this.setPlayer1(new WarPlayer(in.nextLine()));
-        System.out.println("Player 2 Name: ");
-        this.setPlayer1(new WarPlayer(in.nextLine()));
-        System.out.println(this.player1);
-        System.out.println(this.player2);
+        System.out.print("Player 2 Name: ");
+        this.setPlayer2(new WarPlayer(in.nextLine()));
+        System.out.println(this.player1.getName());
+        System.out.println(this.player2.getName());
     }
 
 }

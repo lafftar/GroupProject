@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class WarGroupOfCards extends GroupOfCards {
 
-    public WarGroupOfCards(int size) {
-        super(size);
+    public WarGroupOfCards() {
+        super(52);
         assembleCards();
 //        shuffle();
     }
