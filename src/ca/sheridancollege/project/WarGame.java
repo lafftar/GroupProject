@@ -2,12 +2,17 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class WarGame extends Game {
 
     private WarPlayer player1;
     private WarPlayer player2;
     private PlayerDeck placeholderDeck; // deck to hold cards that are discarded in the war round
+
+    public WarGame(String name) {
+        super(name);
+    }
 
     public WarPlayer getPlayer1() {
         return this.player1;
@@ -93,10 +98,18 @@ public class WarGame extends Game {
     @Override
     public void play() {
         /* First Round:
-                both players deal: take one card from each player, put it in the placeholder
+                - both players deal: take one card from each player, put it in the placeholder
+                - compare cards, whoever has the highest card gets the playerDeck
 
          */
-
+        Scanner in = new Scanner(System.in);
+        // collect info about both players
+        System.out.println("Player 1 Name: ");
+        this.setPlayer1(new WarPlayer(in.nextLine()));
+        System.out.println("Player 2 Name: ");
+        this.setPlayer1(new WarPlayer(in.nextLine()));
+        System.out.println(this.player1);
+        System.out.println(this.player2);
     }
 
 }
