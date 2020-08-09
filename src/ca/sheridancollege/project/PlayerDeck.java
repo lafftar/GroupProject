@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * @author OtherUser
  */
-public class PlayerDeck extends WarGroupOfCards {
+public class PlayerDeck extends GroupOfCards {
 
     private ArrayList<Card> playerDeck = new ArrayList(26);
     private String nameOfDeck;
