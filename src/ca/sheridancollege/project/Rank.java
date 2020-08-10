@@ -4,6 +4,7 @@ package ca.sheridancollege.project;
  * Enumeration for the rank of a War Card.
  *
  * @author Ashley Sun
+ * @author Bryan Acorda
  */
 public enum Rank {
     TWO("Two", 2),
