@@ -56,10 +56,10 @@ public class WarPlayer extends Player {
     public void setScore(int score) {
         this.score = score;
     }
-    
+
     // getter and setter for wins and losses
     public int getWins() {
-        return wins;
+        return wins++;
     }
 
     public void setWins(int wins) {
@@ -67,7 +67,7 @@ public class WarPlayer extends Player {
     }
 
     public int getLosses() {
-        return losses;
+        return losses++;
     }
 
     public void setLosses(int losses) {
@@ -77,7 +77,7 @@ public class WarPlayer extends Player {
     /**
      * Returns a String representing how many games the player won vs lost.
      * i.e., 2 : 0, is two games won and 0 games lost
-     * 
+     *
      * @return the stats the players game
      */
     public String getStats() {
@@ -86,8 +86,8 @@ public class WarPlayer extends Player {
 
     // ???
     @Override
-    public void play() {
-
+    public Card play() {
+        return this.play();
     }
 
 }
