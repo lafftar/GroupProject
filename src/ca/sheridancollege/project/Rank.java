@@ -6,7 +6,7 @@ package ca.sheridancollege.project;
  * @author Ashley Sun
  */
 public enum Rank {
-    ONE("One", 1),
+    ACE("ACE", 1),
     TWO("Two", 2),
     THREE("Three", 3),
     FOUR("Four", 4),
