@@ -19,7 +19,7 @@ public enum Rank {
     JACK("Jack", 11),
     QUEEN("Queen", 12),
     KING("King", 13),
-    ACE("ACE", 14);
+    ACE("Ace", 14);
 
     //user-friendly format of rank
     private String displayRank;
