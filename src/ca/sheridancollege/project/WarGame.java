@@ -145,8 +145,8 @@ public class WarGame extends Game {
             WarCard player1Card = this.player1.drawCard();
             WarCard player2Card = this.player2.drawCard();
             // need to replace these 'Player 1' with the player names.
-            System.out.println("Player 1 Drew: " + player1Card);
-            System.out.println("Player 2 Drew: " + player2Card);
+            System.out.println("Player 1 Drew: " + player1Card.toString());
+            System.out.println("Player 2 Drew: " + player2Card.toString());
             // deal the first cards,
             // place it in the placeholder deck
             // remove the cards from each players deck.
