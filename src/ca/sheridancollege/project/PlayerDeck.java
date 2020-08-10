@@ -1,6 +1,7 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author OtherUser
@@ -17,6 +18,16 @@ public class PlayerDeck extends GroupOfCards {
 
     public ArrayList<WarCard> getPlayerDeck() {
         return super.getCards();
+    }
+
+    public void wipePlayerDeck() {
+        ArrayList<WarCard> playerDeckCards = this.getPlayerDeck();
+        Iterator<WarCard> iterator = playerDeckCards.iterator();
+        while (iterator.hasNext()) {
+            WarCard check = iterator.next();
+            iterator.remove();
+        }
+
     }
 
     /**
