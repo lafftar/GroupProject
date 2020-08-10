@@ -84,10 +84,15 @@ public class WarPlayer extends Player {
         return String.format("%d : %d", wins, losses);
     }
 
-    // ???
+    /**
+    * Returns either 1 or 2 cards from the deck.
+    * depending on if it's a regular round or a war round.
+    * 
+    * @return war card
+    */
     @Override
-    public void play() {
-
+    public WarCard play() {
+        return drawCard(); //change later
     }
 
 }
