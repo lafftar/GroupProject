@@ -168,8 +168,8 @@ public class WarGame extends Game {
                     player2Card = this.player2.drawCard();
                     if (i == 1) {
                         // WarCard might need a better toString()
-                        System.out.println("Player 1 Drew: " + player1Card);
-                        System.out.println("Player 2 Drew: " + player2Card);
+                        System.out.println("Player 1 Drew: " + player1Card.toString());
+                        System.out.println("Player 2 Drew: " + player2Card.toString());
                     }
                     // take 1 card from  each player, add to placeholder deck
                     this.placeholderDeck.addCardToPlayerDeck(player1Card);
