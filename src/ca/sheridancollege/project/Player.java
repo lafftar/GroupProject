@@ -43,9 +43,10 @@ public abstract class Player {
     }
 
     /**
+     * Abstract method returns either 1 or 2 cards from the player's deck.
      * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
      * with logic to play your game.
      */
-    public abstract void play();
+    public abstract Card play();
 
 }
