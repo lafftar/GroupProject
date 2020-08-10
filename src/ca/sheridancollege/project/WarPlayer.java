@@ -86,8 +86,8 @@ public class WarPlayer extends Player {
 
     // ???
     @Override
-    public void play() {
-
+    public Card play() {
+        return this.play();
     }
 
 }

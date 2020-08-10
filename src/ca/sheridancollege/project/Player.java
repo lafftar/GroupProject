@@ -1,8 +1,8 @@
 /**
  * SYST 17796 Project Base code.
  * 
- * Date: 06-09-2020
- * @Author Bryan Acorda
+ * @Author Bryan Acorda, 2020-06-09
+ * @author Ashley Sun, 2020-08-09
  * Group 3
  */
 package ca.sheridancollege.project;
@@ -43,9 +43,10 @@ public abstract class Player {
     }
 
     /**
+     * Abstract method returns either 1 or 2 cards from the player's deck.
      * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
      * with logic to play your game.
      */
-    public abstract void play();
+    public abstract Card play();
 
 }
