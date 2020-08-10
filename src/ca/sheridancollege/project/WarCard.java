@@ -44,8 +44,14 @@ public class WarCard extends Card {
         this.rank = rank;
     }
 
+    /**
+     * Returns a description of WarCard in a String
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
-        return this.getRank() + " of " + this.getSuit();
+        return this.getRank().getDisplayRank() + " of " 
+                + this.getSuit().getDisplaySuit();
     }
 }

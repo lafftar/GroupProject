@@ -99,12 +99,24 @@ public class WarGame extends Game {
      */
     public void addToPlaceholderDeck(PlayerDeck placeholderDeck) {
         // TODO - implement WarGame.addToPlaceholderDeck
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
+        
     }
 
+    /**
+     * This method declares a winner and increments the winning score 
+     * of each player
+     * 
+     */
     @Override
     public void declareWinner() {
-
+        if (player1.getDeck().getPlayerDeck().size() == 52) {
+            System.out.println(player1.getName() + "Wins");
+            player1.setWins(player1.getWins() + 1);
+        } else {
+            System.out.println(player2.getName() + "Wins");
+            player1.setWins(player2.getWins() + 1);
+        }
     }
 
     @Override
@@ -147,7 +159,7 @@ public class WarGame extends Game {
             // might benefit from having a remove card method for the player
             // remove the card we just drew from each player
             this.player1.getDeck().getPlayerDeck().remove(player1Card);
-            this.player2.getDeck().getPlayerDeck().remove(player2Card);
+            this.player2.getDeck().getPlayerDeck().remove(player2Card);            
             // while war is declared, we want the methods above to loop twice.
             // this loop will only be entered when war is declared from first play, which is obvs the only time war can be declared
             while (this.compareCards(player1Card, player2Card) == 3) {
