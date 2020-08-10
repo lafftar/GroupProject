@@ -59,7 +59,7 @@ public class WarPlayer extends Player {
 
     // getter and setter for wins and losses
     public int getWins() {
-        return wins;
+        return wins++;
     }
 
     public void setWins(int wins) {
@@ -67,7 +67,7 @@ public class WarPlayer extends Player {
     }
 
     public int getLosses() {
-        return losses;
+        return losses++;
     }
 
     public void setLosses(int losses) {
