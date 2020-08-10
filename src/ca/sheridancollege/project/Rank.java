@@ -21,7 +21,7 @@ public enum Rank {
     ACE("ACE", 13),
     KING("King", 14);
 
-    //user-friendly format of rank
+    //user-friendly format of rank.
     private String displayRank;
     
     //the actual number assigned to the rank
