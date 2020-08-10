@@ -54,12 +54,13 @@ public class WarGame extends Game {
     }
 
     /**
-     * compares two war cards return true if they are the same return false if
-     * they are different
-     *
+     * Compares two War Cards based on their rank and returns 
+     * 1 - if card 1 is greater
+     * 2 - if card 2 is greater
+     * 3 - if they are the same.
+     * 
      * @param card1
      * @param card2
-     * @return true if card values have same rank and suit, false otherwise
      */
     public int compareCards(WarCard card1, WarCard card2) {
         // 1 if card 1 is greater
@@ -75,8 +76,8 @@ public class WarGame extends Game {
     }
 
     /**
-     * initiates war takes out 4 cards from the playerDeck puts the first 3 in
-     * the placeholder deck returns the last card
+     * Initiates war takes out 4 cards from the playerDeck puts the first 3 in
+     * the placeholder deck returns the last card.
      *
      * @return
      */
@@ -85,15 +86,16 @@ public class WarGame extends Game {
     }
 
     /**
-     * retrieves the set of cards that are discarded during the war round - the
-     * winner's pile of cards
+     * Retrieves the set of cards that are discarded during the war round - the
+     * winner's pile of cards.
+     * @return PlayerDeck
      */
     public PlayerDeck getPlaceholderDeck() {
         return this.placeholderDeck;
     }
 
     /**
-     * the extra cards from the war round are added to the placeholder deck
+     * The extra cards from the war round are added to the placeholder deck
      *
      * @param placeholderDeck
      */
@@ -107,6 +109,15 @@ public class WarGame extends Game {
 
     }
 
+    /**
+    * Summary:
+    * creates WarGroupOfCards object - already shuffled
+    * both players draw one card
+    * compare cards
+    * war round
+    * super repetitive, DRY distributeWinnings()?
+    * there is a winner 
+    */
     @Override
     public void play() {
         /* First Round:
