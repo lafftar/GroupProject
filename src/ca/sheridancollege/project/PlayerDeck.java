@@ -9,7 +9,7 @@ public class PlayerDeck extends WarGroupOfCards {
 
     private ArrayList<WarCard> playerDeck = new ArrayList(26);
     private String nameOfDeck;
-
+    
     public ArrayList<WarCard> getPlayerDeck() {
         return this.playerDeck;
     }

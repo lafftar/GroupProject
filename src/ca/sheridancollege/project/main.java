@@ -14,7 +14,7 @@ public class main {
     public static void main(String[] args) {
 
         // Create a main playing deck
-        WarGroupOfCards deck = new WarGroupOfCards(52);
+        WarGroupOfCards deck = new WarGroupOfCards();
         // shuffle
         
         System.out.println("This is the main deck");
@@ -29,10 +29,8 @@ public class main {
                 + "to each player\n");
         
         // Create objects of both players
-        String name1 = "Player1";
-        String name2 = "Player12";
-        PlayerDeck p1 = new PlayerDeck(26, name1);
-        PlayerDeck p2 = new PlayerDeck(26, name2);
+        PlayerDeck p1 = new PlayerDeck();
+        PlayerDeck p2 = new PlayerDeck();
         
         deck.dealToPlayerDeck(deck.getCards(), p1);
         deck.dealToPlayerDeck(deck.getCards(), p2);
