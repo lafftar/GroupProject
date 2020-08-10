@@ -14,6 +14,7 @@ public class WarGame extends Game {
     // allows us to stop the game after 100 rounds have been played, and declare the player with most cards the winner
     private int numRounds = 0;
 
+    // trying to fix
     public WarGame(String name) {
         super(name);
     }
