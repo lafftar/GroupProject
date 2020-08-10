@@ -13,7 +13,7 @@ import ca.sheridancollege.project.Rank;
  *
  * @author lafftar
  */
-public class MainTJTesting {
+public class Main {
 
     public static void main(String[] args) {
         WarGame warGame = new WarGame("War");
