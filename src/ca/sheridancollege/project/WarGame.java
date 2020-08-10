@@ -54,11 +54,9 @@ public class WarGame extends Game {
     }
 
     /**
-     * Compares two War Cards based on their rank and returns 
-     * 1 - if card 1 is greater
-     * 2 - if card 2 is greater
-     * 3 - if they are the same.
-     * 
+     * Compares two War Cards based on their rank and returns 1 - if card 1 is
+     * greater 2 - if card 2 is greater 3 - if they are the same.
+     *
      * @param card1
      * @param card2
      */
@@ -81,13 +79,35 @@ public class WarGame extends Game {
      *
      * @return
      */
-    public WarCard war() {
-        return new WarCard(Suit.CLUBS, Rank.EIGHT); // just for testing, DELETE
+    public void warInitiated(WarCard player1, WarCard player2) {
+        // while war is declared, we want the methods above to loop twice.
+        // This loop will only be entered when war is declared from first play, 
+        // which is obvs the only time war can be declared
+        while (this.compareCards(player1, player2) == 3) {
+            System.out.println("War has been initiated!!!");
+            for (int i = 0; i < 2; i++) {
+                player1 = this.player1.drawCard();
+                player2 = this.player2.drawCard();
+                if (i == 1) {
+                    // WarCard might need a better toString()
+                    System.out.println("Player 1 Drew: " + player1.toString());
+                    System.out.println("Player 2 Drew: " + player2.toString());
+                }
+                // take 1 card from  each player, add to placeholder deck
+                this.placeholderDeck.addCardToPlayerDeck(player1);
+                this.placeholderDeck.addCardToPlayerDeck(player2);
+                // might benefit from having a remove card method for the player
+                // remove the card we just drew from each player
+                this.player1.getDeck().getPlayerDeck().remove(player1);
+                this.player2.getDeck().getPlayerDeck().remove(player2);
+            }
+        }
     }
 
     /**
      * Retrieves the set of cards that are discarded during the war round - the
      * winner's pile of cards.
+     *
      * @return PlayerDeck
      */
     public PlayerDeck getPlaceholderDeck() {
@@ -102,13 +122,13 @@ public class WarGame extends Game {
     public void addToPlaceholderDeck(PlayerDeck placeholderDeck) {
         // TODO - implement WarGame.addToPlaceholderDeck
 //        throw new UnsupportedOperationException();
-        
+
     }
 
     /**
-     * This method declares a winner and increments the winning score 
-     * of each player
-     * 
+     * This method declares a winner and increments the winning score of each
+     * player
+     *
      */
     @Override
     public void declareWinner() {
@@ -122,14 +142,10 @@ public class WarGame extends Game {
     }
 
     /**
-    * Summary:
-    * creates WarGroupOfCards object - already shuffled
-    * both players draw one card
-    * compare cards
-    * war round
-    * super repetitive, DRY distributeWinnings()?
-    * there is a winner 
-    */
+     * Summary: creates WarGroupOfCards object - already shuffled both players
+     * draw one card compare cards war round super repetitive, DRY
+     * distributeWinnings()? there is a winner
+     */
     @Override
     public void play() {
         /* First Round:
@@ -170,28 +186,11 @@ public class WarGame extends Game {
             // might benefit from having a remove card method for the player
             // remove the card we just drew from each player
             this.player1.getDeck().getPlayerDeck().remove(player1Card);
-            this.player2.getDeck().getPlayerDeck().remove(player2Card);            
-            // while war is declared, we want the methods above to loop twice.
-            // this loop will only be entered when war is declared from first play, which is obvs the only time war can be declared
-            while (this.compareCards(player1Card, player2Card) == 3) {
-                System.out.println("War has been initiated!!!");
-                for (int i = 0; i < 2; i++) {
-                    player1Card = this.player1.drawCard();
-                    player2Card = this.player2.drawCard();
-                    if (i == 1) {
-                        // WarCard might need a better toString()
-                        System.out.println("Player 1 Drew: " + player1Card.toString());
-                        System.out.println("Player 2 Drew: " + player2Card.toString());
-                    }
-                    // take 1 card from  each player, add to placeholder deck
-                    this.placeholderDeck.addCardToPlayerDeck(player1Card);
-                    this.placeholderDeck.addCardToPlayerDeck(player2Card);
-                    // might benefit from having a remove card method for the player
-                    // remove the card we just drew from each player
-                    this.player1.getDeck().getPlayerDeck().remove(player1Card);
-                    this.player2.getDeck().getPlayerDeck().remove(player2Card);
-                }
-            }
+            this.player2.getDeck().getPlayerDeck().remove(player2Card);
+
+            // Checks for whether War is declared and does it's thing you know?
+            warInitiated(player1Card, player2Card);
+
             // super repetitive, DRY distributeWinnings()?
             if (this.compareCards(player1Card, player2Card) == 2) { // player 2 won
                 // player 2 will have all cards in placeholder deck added to the bottom of his pile.
