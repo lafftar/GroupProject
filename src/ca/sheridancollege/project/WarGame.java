@@ -119,6 +119,7 @@ public class WarGame extends Game {
                     // remove the card we just drew from each player
                     this.player1.getDeck().getPlayerDeck().remove(player1);
                     this.player2.getDeck().getPlayerDeck().remove(player2);
+                    this.incrementNumRounds();
                 }
             }
 
@@ -200,6 +201,10 @@ public class WarGame extends Game {
             player1.setWins(player1.getWins() + 1);
             player2.setLosses(player2.getLosses() + 1);
 
+        } else if (player1.getDeck().getPlayerDeck().size() == player2.getDeck().getPlayerDeck().size()) {
+            System.out.println("Both players have the same number of cards! You both get a win!");
+            player1.setWins(player1.getWins() + 1);
+            player2.setWins(player2.getWins() + 1);
         } else {
             System.out.println(player2.getName() + " Wins!");
             player2.setWins(player2.getWins() + 1);
@@ -215,9 +220,19 @@ public class WarGame extends Game {
 
     private void resetGame() {
         this.gameOver = false;
+        this.numRounds = 0;
         this.player1.getDeck().wipePlayerDeck();
         this.player2.getDeck().wipePlayerDeck();
         this.placeholderDeck.wipePlayerDeck();
+    }
+
+    private void incrementNumRounds() {
+        this.numRounds++;
+        if (this.numRounds > 1000) {
+            this.gameOver = true;
+            System.out.println("Players have played over 1,000 rounds! We don't have all day! "
+                    + "Game goes to the player with the most cards.");
+        }
     }
 
     /**
@@ -267,6 +282,7 @@ public class WarGame extends Game {
             // remove the card we just drew from each player
             this.player1.getDeck().getPlayerDeck().remove(player1Card);
             this.player2.getDeck().getPlayerDeck().remove(player2Card);
+            this.incrementNumRounds();
 
             // Checks for whether War is declared and does it's thing you know? -Bryan
             warInitiated(player1Card, player2Card);
