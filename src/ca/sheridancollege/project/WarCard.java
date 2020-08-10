@@ -32,8 +32,9 @@ public class WarCard extends Card {
         this.suit = suit;
     }
 
-    public Rank getRank() {
-        return this.rank;
+    // ashley - change getRank to return the int rankNum
+    public int getRank() {
+        return rank.getRankNumber();
     }
 
     /**

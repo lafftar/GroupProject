@@ -1,5 +1,7 @@
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  * Models a player in the game War
  * TODO: 
@@ -86,7 +88,7 @@ public class WarPlayer extends Player {
     public String getStats() {
         return String.format("%d : %d", wins, losses);
     }
-
+    
     /**
     * Returns either 1 or 2 cards from the deck.
     * depending on if it's a regular round or a war round.
@@ -98,4 +100,7 @@ public class WarPlayer extends Player {
         return drawCard(); //change later
     }
 
+    public void removeCard(ArrayList<WarCard> cards) {
+        
+    }
 }

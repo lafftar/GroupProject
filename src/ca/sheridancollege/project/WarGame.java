@@ -3,15 +3,22 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static java.util.Arrays.asList;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
 public class WarGame extends Game {
 
-    private WarGroupOfCards allCards = new WarGroupOfCards();
+    private WarGroupOfCards allCards = new WarGroupOfCards();//to distribute to players
+    
     private WarPlayer player1 = new WarPlayer("Player 1");
     private WarPlayer player2 = new WarPlayer("Player 2");
+    
+    // ashley - change deck to assign to player 1 only
     private PlayerDeck placeholderDeck = new PlayerDeck(0); // deck to hold cards that are discarded in the war round
+    
+// ashley- added another placeholderDeck for player 2
+    private PlayerDeck placeholderDeck2 = new PlayerDeck(0);
 
     public WarGame(String name) {
         super(name);
@@ -66,10 +73,10 @@ public class WarGame extends Game {
         // 1 if card 1 is greater
         // 2 if card 2 is greater
         // 3 if they're equal
-        if (card1.getRank().getRankNumber() > card2.getRank().getRankNumber()) {
+        if (card1.getRank()> card2.getRank()) {
             return 1;
         }
-        if (card1.getRank().getRankNumber() < card2.getRank().getRankNumber()) {
+        if (card1.getRank() < card2.getRank()) {
             return 2;
         }
         return 3;
@@ -125,18 +132,9 @@ public class WarGame extends Game {
                 - compare cards, whoever has the highest card gets the playerDeck
 
          */
-//        Scanner in = new Scanner(System.in);
-        // collect info about both players
 
-//        System.out.print("Player 1 Name: ");
-//        this.setPlayer1(new WarPlayer(in.nextLine()));
-//        System.out.print("Player 2 Name: ");
-//        this.setPlayer2(new WarPlayer(in.nextLine()));
-//        System.out.println(this.player1.getName());
-//        System.out.println(this.player2.getName());
         // need to shuffle the deck and distribute the cards from wargroupofcards
         // first we create the wargroupofcards, it's created, assembled and shuffled in the wargroupofcards class
-//        WarGroupOfCards allCards = new WarGroupOfCards();
         allCards.dealToPlayerDeck(new ArrayList<>(asList(this.player1, this.player2)));
         // this will need to be nested further, to have support for continious play
         while (this.player1.getDeck().getSize() > 0 && this.player2.getDeck().getSize() > 0) {
@@ -150,8 +148,28 @@ public class WarGame extends Game {
             // deal the first cards,
             // place it in the placeholder deck
             // remove the cards from each players deck.
-            // compare the cards
-
+            
+            // ashley - find specific cards in unplayedCards and remove them
+            for(int i = 0; i < unplayedCards.getSize(); i++) {
+                // instantiate the current war card
+                WarCard c = unplayedCards.getCards().get(i);
+                // compare every cards in unplayedCards with player1Card
+                if(c.equals(player1Card)) {
+                    unplayedCards.remove(c);
+                }
+            }
+            
+            //ashley - added the war declaration round here
+            while (this.compareCards(player1Card, player2Card) == 3) {
+                System.out.println("War has been initiated!!!");
+                for (int i = 0; i < 2; i++) {
+                    player1Card = this.player1.drawCard();
+                    player2Card = this.player2.drawCard();
+                    if (i == 1) {
+                        
+                        System.out.println("Player 1 Drew: " + player1Card.toString());
+                        System.out.println("Player 2 Drew: " + player2Card.toString());
+                    }
             // take 1 card from  each player, add to placeholder deck
             this.placeholderDeck.addCardToPlayerDeck(player1Card);
             this.placeholderDeck.addCardToPlayerDeck(player2Card);
@@ -161,16 +179,9 @@ public class WarGame extends Game {
             this.player2.getDeck().getPlayerDeck().remove(player2Card);
             // while war is declared, we want the methods above to loop twice.
             // this loop will only be entered when war is declared from first play, which is obvs the only time war can be declared
-            while (this.compareCards(player1Card, player2Card) == 3) {
-                System.out.println("War has been initiated!!!");
-                for (int i = 0; i < 2; i++) {
-                    player1Card = this.player1.drawCard();
-                    player2Card = this.player2.drawCard();
-                    if (i == 1) {
-                        // WarCard might need a better toString()
-                        System.out.println("Player 1 Drew: " + player1Card.toString());
-                        System.out.println("Player 2 Drew: " + player2Card.toString());
-                    }
+            
+            // ashley - removed the war round declaration from here and added to after compare cards
+            
                     // take 1 card from  each player, add to placeholder deck
                     this.placeholderDeck.addCardToPlayerDeck(player1Card);
                     this.placeholderDeck.addCardToPlayerDeck(player2Card);
@@ -185,7 +196,7 @@ public class WarGame extends Game {
                 // player 2 will have all cards in placeholder deck added to the bottom of his pile.
                 // place holder deck will be wiped.
                 System.out.println(String.format("Player %d Wins! They get %d cards",
-                        this.compareCards(player1Card, player2Card), this.placeholderDeck.getSize()));
+                        this.compareCards(player1Card, player2Card), this.placeholderDeck.getSize() - 1));
                 for (WarCard card : this.placeholderDeck.getCards()) {
                     this.player2.getDeck().addCardToPlayerDeck(card);
                 }

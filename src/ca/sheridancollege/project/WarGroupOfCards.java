@@ -35,8 +35,17 @@ public class WarGroupOfCards extends GroupOfCards {
         }
     }
 
-    //removed the removeCardsFromDeck() method because it fits better under the war player class
-    // the player draws a card and removes cards from their deck.
+    // ashley - added back the removeCards() method because i need it in 
+    // WarGame class play() and edit to take from index
+    /**
+     * This removes card from the index.
+     *
+     * @param deck
+     * @param index
+     */
+    public void removeCardsFromDeck(ArrayList<WarCard> deck, int index) {
+        deck.remove(index);
+    }
 
     /**
      * This method deals the mainDeck to the player's deck.
