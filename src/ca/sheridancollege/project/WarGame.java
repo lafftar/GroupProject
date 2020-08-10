@@ -64,7 +64,8 @@ public class WarGame extends Game {
 //         2 if card 2 is greater
 //         3 if they're equal
 
-        // Yeah... I changed these values to 0,1,2 -Bryan
+        // Yeah... I changed these values to 0,1,2. This way the ArrayList for 
+        // distributeWinnings() method could work -Bryan
         if (card1.getRank().getRankNumber() > card2.getRank().getRankNumber()) {
             return 0;
         }
