@@ -118,12 +118,6 @@ public class WarPlayer extends Player {
         return String.format("%d : %d", wins, losses);
     }
 
-    // to delete
-    @Override
-    public Card play() {
-        return this.play();
-    }
-
     /**
      * A toString that returns the name of the Player, makes it easier to print
      * without calling .getName() all the time.
