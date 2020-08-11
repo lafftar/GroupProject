@@ -5,6 +5,7 @@ package ca.sheridancollege.project;
  * suit and rank. Also returns a string representation of car card from toString 
  * 
  * @author Bryan Acorda
+ * @author Ashley Sun
  */
 public class WarCard extends Card {
 
