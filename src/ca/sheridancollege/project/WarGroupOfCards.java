@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
@@ -15,28 +11,34 @@ import java.util.Collection;
  */
 public class WarGroupOfCards extends GroupOfCards {
 
+    /**
+    * Creates a WarGroupOfCards object with 52 WarCards.
+    * It is assembled with WarCards and shuffled.
+    */
     public WarGroupOfCards() {
         super(52);
         this.assembleCards();
         super.shuffle();
     }
 
-    private void assembleCards() { // changed to private because it shouldn't be used elsewhere - TJ
+    // assembleCards() method is private because it shouldn't be used elsewhere - TJ
+    private void assembleCards() { 
+        
         // Create a reference for WarCard. -Bryan
         WarCard card;
+        
         // Assembling the deck from the cards created in the Card class
         for (Suit suit : Suit.values()) {
+            
             for (Rank rank : Rank.values()) {
                 // initialized the card variable here -Bryan
                 card = new WarCard(suit, rank);
+                
                 // would make sense to put the reference outside the for loop for performance sake - TJ
                 this.getCards().add(card);
             }
         }
     }
-
-    //removed the removeCardsFromDeck() method because it fits better under the war player class
-    // the player draws a card and removes cards from their deck.
 
     /**
      * This method deals the mainDeck to the player's deck.
