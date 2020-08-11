@@ -90,4 +90,13 @@ public class WarPlayer extends Player {
         return this.play();
     }
 
+    /**
+     * A toString that returna the name of the Player, makes it easier to print
+     * without calling .getName() all the time.
+     * 
+     * @return the name of player
+     */
+    public String toString() {
+        return this.getName();
+    }
 }
