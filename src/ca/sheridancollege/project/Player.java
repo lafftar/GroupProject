@@ -1,10 +1,4 @@
-/**
- * SYST 17796 Project Base code.
- * 
- * @author Bryan Acorda, 2020-06-09
- * @author Ashley Sun, 2020-08-09
- * Group 3
- */
+
 package ca.sheridancollege.project;
 
 /**
@@ -12,6 +6,8 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Bryan Acorda, 2020-06-09
+ * @author Ashley Sun, 2020-08-09
  */
 public abstract class Player {
 
@@ -41,12 +37,5 @@ public abstract class Player {
     public void setName(String name) {
         this.name = name;
     }
-
-    /**
-     * is this method needed?
-     * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
-     * with logic to play your game.
-     */
-    public abstract Card play();
 
 }
