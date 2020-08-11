@@ -59,7 +59,7 @@ public class WarPlayer extends Player {
 
     // getter and setter for wins and losses
     public int getWins() {
-        return wins++;
+        return wins;
     }
 
     public void setWins(int wins) {
@@ -93,7 +93,7 @@ public class WarPlayer extends Player {
     /**
      * A toString that returna the name of the Player, makes it easier to print
      * without calling .getName() all the time.
-     * 
+     *
      * @return the name of player
      */
     public String toString() {
