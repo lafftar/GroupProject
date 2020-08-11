@@ -8,6 +8,9 @@ import java.util.Iterator;
  */
 public class PlayerDeck extends GroupOfCards {
 
+    /**
+    * Constructs a GroupOfCards with 26 WarCards.
+    */
     public PlayerDeck() {
         super(26);
     }
@@ -16,10 +19,16 @@ public class PlayerDeck extends GroupOfCards {
         super(size);
     }
 
+    /**
+    * Returns the cards of the PlayerDeck.
+    */
     public ArrayList<WarCard> getPlayerDeck() {
         return super.getCards();
     }
 
+    /**
+    * Removes all cards from the player's deck.
+    */
     public void wipePlayerDeck() {
         ArrayList<WarCard> playerDeckCards = this.getPlayerDeck();
         Iterator<WarCard> iterator = playerDeckCards.iterator();
@@ -30,15 +39,10 @@ public class PlayerDeck extends GroupOfCards {
 
     }
 
+    //removed the commented out setPlayerDeck(ArrayList<WarCard> playerDeck)
+  
     /**
-     *
-     * @param playerDeck
-     */
-//    public void setPlayerDeck(ArrayList<WarCard> playerDeck) {
-//        super.getCards().set = playerDeck;
-//    }
-    /**
-     *
+     * Adds a specified WarCard to the player deck.
      *
      * @param card
      */
@@ -53,7 +57,6 @@ public class PlayerDeck extends GroupOfCards {
      * @return the specific war card
      */
     public WarCard getCardFromDeck(int cardIndex) {
-//        System.out.println(this.cards);
         return super.getCards().get(cardIndex);
     }
 
