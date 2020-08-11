@@ -12,12 +12,14 @@ public class WarGame extends Game {
     private PlayerDeck placeholderDeck = new PlayerDeck(0); // deck to hold cards that are discarded in the war round
     ArrayList<WarPlayer> player = new ArrayList(asList(player1, player2)); // Store each player
     ArrayList<WarCard> playerCards;
+    
     // for some reason, changing the object in .warInitiated() doesn't change the object outside, so i'm making this global
     private WarCard player1Card;
     private WarCard player2Card;
 
     // allows us to declare gameOver in warInitiated and have it carry over to the distributeWinnings() method
     private boolean gameOver = false;
+    
     // allows us to stop the game after 1000 rounds have been played, and declare the player with most cards the winner
     private int numRounds = 0;
 
@@ -33,31 +35,39 @@ public class WarGame extends Game {
     }
 
     /**
-     *
+     * Sets the first player to the WarGame.
      * @param player1
      */
     public void setPlayer1(WarPlayer player1) {
         this.player1 = player1;
     }
 
+    /**
+    * Retrieves the first player of this WarGame.
+    * @return player1
+    */
     public WarPlayer getPlayer2() {
         return this.player2;
     }
 
     /**
-     *
+     * Sets the second player to the WarGame.
      * @param player2
      */
     public void setPlayer2(WarPlayer player2) {
         this.player2 = player2;
     }
 
+    /**
+    * Retrieves the deck of this game.
+    * @return player1
+    */
     public PlayerDeck getWarDeck() {
         return this.placeholderDeck; // just assuming, confirm
     }
 
     /**
-     *
+     * Assigns a deckof WarCards for this game.
      * @param warDeck
      */
     public void setWarDeck(PlayerDeck warDeck) {
@@ -65,18 +75,14 @@ public class WarGame extends Game {
     }
 
     /**
-     * Compares two War Cards based on their rank and returns 1 - if card 1 is
-     * greater 2 - if card 2 is greater 3 - if they are the same.
+     * Compares two War Cards based on their rank and returns 0 - if card 1 is
+     * greater, 1 if card 2 is greater, 2 if they are the same.
      *
      * @param card1
      * @param card2
      */
     public int compareCards(WarCard card1, WarCard card2) {
-
-//         1 if card 1 is greater
-//         2 if card 2 is greater
-//         3 if they're equal
-        // Yeah... I changed these values to 0,1,2. This way the ArrayList for
+        // By using the values 0, 1, 2, the ArrayList for
         // distributeWinnings() method could work -Bryan
         if (card1.getRank().getRankNumber() > card2.getRank().getRankNumber()) {
             return 0;
@@ -87,6 +93,7 @@ public class WarGame extends Game {
         return 2;
     }
 
+    // returns the player with less cards
     private WarPlayer returnPlayerWithLowerCards() {
         if (player.get(0).getDeck().getSize() < player.get(1).getDeck().getSize()) {
             return player.get(0);
@@ -150,16 +157,7 @@ public class WarGame extends Game {
         return this.placeholderDeck;
     }
 
-    /**
-     * The extra cards from the war round are added to the placeholder deck
-     *
-     * @param placeholderDeck
-     */
-    public void addToPlaceholderDeck(PlayerDeck placeholderDeck) {
-        // TODO - implement WarGame.addToPlaceholderDeck
-//        throw new UnsupportedOperationException();
-
-    }
+    //removed addToPlaceHolderDeck because it has not be implemented
 
     /**
      * This method handles distribution of cards when a player wins a round
@@ -288,9 +286,7 @@ public class WarGame extends Game {
     }
 
     /**
-     * Summary: creates WarGroupOfCards object - already shuffled both players
-     * draw one card compare cards war round super repetitive, DRY
-     * distributeWinnings()? there is a winner
+     * Runs the game of War.
      */
     @Override
     public void play() {
