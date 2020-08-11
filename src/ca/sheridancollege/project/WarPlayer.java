@@ -1,13 +1,8 @@
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
-
 /**
  * Models a player in the game War
- * TODO: 
- * removeCard() : void
- * play() : WarCard
- * 
+ *
  * @author Ashley Sun, 2020
  */
 public class WarPlayer extends Player {
@@ -24,17 +19,24 @@ public class WarPlayer extends Player {
     // # of games lost
     private int losses = 0;
 
+    /**
+    * Constructs a WarPlay object with specified name.
+    */
     public WarPlayer(String name) {
         super(name);
     }
 
+    /**
+    * Retrieves the deck of WarPlayer.
+    * @return deck
+    */
     public PlayerDeck getDeck() {
         return this.deck;
     }
 
     /**
-     *
-     * @param deck
+     * Assigns a deck of WarCards to the player.
+     * @param deck of the WarPlayer
      */
     public void setDeck(PlayerDeck deck) {
         this.deck = deck;
@@ -47,15 +49,18 @@ public class WarPlayer extends Player {
      */
     public WarCard drawCard() {
         return deck.getCardFromDeck(0);
-        //return new WarCard(Suit.CLUBS, Rank.EIGHT); // just for testing, delete.
     }
 
+    /**
+    * Retrieve the number of rounds won by the player.
+    * @return score
+    */
     public int getScore() {
         return this.score;
     }
 
     /**
-     *
+     * Assigns a score to the player.
      * @param score
      */
     public void setScore(int score) {
@@ -63,18 +68,34 @@ public class WarPlayer extends Player {
     }
 
     // getter and setter for wins and losses
+    /**
+    * Retrieves the number of games won of this WarPlayer.
+    * @return wins
+    */
     public int getWins() {
         return wins;
     }
 
+    /**
+    * Sets the number of wins to this WarPlayer.
+    * @param wins
+    */
     public void setWins(int wins) {
         this.wins = wins;
     }
 
+    /**
+    * Retrieves the number of games lost of this WarPlayer.
+    * @return losses
+    */
     public int getLosses() {
-        return losses;
+        return losses++;
     }
 
+    /**
+    * Sets the losses member.
+    * @param losses
+    */
     public void setLosses(int losses) {
         this.losses = losses;
     }
@@ -88,19 +109,20 @@ public class WarPlayer extends Player {
     public String getStats() {
         return String.format("%d : %d", wins, losses);
     }
-    
-    /**
-    * Returns either 1 or 2 cards from the deck.
-    * depending on if it's a regular round or a war round.
-    * 
-    * @return war card
-    */
+
+    // to delete
     @Override
-    public WarCard play() {
-        return drawCard(); //change later
+    public Card play() {
+        return this.play();
     }
 
-    public void removeCard(ArrayList<WarCard> cards) {
-        
+    /**
+     * A toString that returna the name of the Player, makes it easier to print
+     * without calling .getName() all the time.
+     *
+     * @return the name of player
+     */
+    public String toString() {
+        return this.getName();
     }
 }

@@ -4,9 +4,9 @@ package ca.sheridancollege.project;
  * Enumeration for the rank of a War Card.
  *
  * @author Ashley Sun
- * @author Bryan Acorda
  */
 public enum Rank {
+    
     TWO("Two", 2),
     THREE("Three", 3),
     FOUR("Four", 4),
@@ -18,10 +18,10 @@ public enum Rank {
     TEN("Ten", 10),
     JACK("Jack", 11),
     QUEEN("Queen", 12),
-    ACE("ACE", 13),
-    KING("King", 14);
+    KING("King", 13),
+    ACE("Ace", 14);
 
-    //user-friendly format of rank.
+    //user-friendly format of rank
     private String displayRank;
     
     //the actual number assigned to the rank

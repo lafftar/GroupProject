@@ -11,7 +11,7 @@ public class WarCard extends Card {
     private Rank rank;
 
     /**
-     *
+     * Constructs a WarCard with specified suit and rank.
      * @param suit
      * @param rank
      */
@@ -20,33 +20,46 @@ public class WarCard extends Card {
         rank = r;
     }
 
+    /**
+    * Retrieves the suit of this WarCard.
+    * @return suit
+    */
     public Suit getSuit() {
         return this.suit;
     }
 
     /**
-     *
+     * Assigns a suit enum to this WarCard.
      * @param suit
      */
     public void setSuit(Suit suit) {
         this.suit = suit;
     }
 
-    // ashley - change getRank to return the int rankNum
-    public int getRank() {
-        return rank.getRankNumber();
+    /**
+    * Retrieves the rank of this WarCard.
+    * @return rank
+    */
+    public Rank getRank() {
+        return this.rank;
     }
 
     /**
-     *
+     * Assigns a rank enum to this WarCard.
      * @param rank
      */
     public void setRank(Rank rank) {
         this.rank = rank;
     }
 
+    /**
+     * Returns this WarCard as a String.
+     * 
+     * @return a string representation of this WarCard
+     */
     @Override
     public String toString() {
-        return rank.getDisplayRank() + " of " + suit.getDisplaySuit();
+        return this.getRank().getDisplayRank() + " of " 
+                + this.getSuit().getDisplaySuit();
     }
 }
