@@ -2,8 +2,6 @@
  * SYST 17796 Project Base code.
  *
  * Date: 06-09-2020
- *
- * @Author Bryan Acorda Group 3
  */
 package ca.sheridancollege.project;
 
@@ -17,10 +15,12 @@ import java.util.Collections;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @modifier Bryan Acorda 08-2020 
  */
 public class GroupOfCards {
 
-    //The group of cards, stored in an ArrayList
+    // The group of cards, stored in an ArrayList
+    // Changed the parameter Card to WarCard -Bryan
     private ArrayList<WarCard> cards;
     private int size;//the size of the grouping
 
@@ -31,7 +31,7 @@ public class GroupOfCards {
 
     /**
      * A method that will get the group of cards as an ArrayList
-     *
+     * 
      * @return the group of cards.
      */
     public ArrayList<WarCard> getCards() {

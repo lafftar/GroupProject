@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Base code.
  * 
- * @Author Bryan Acorda, 2020-06-09
+ * @author Bryan Acorda, 2020-06-09
  * @author Ashley Sun, 2020-08-09
  * Group 3
  */

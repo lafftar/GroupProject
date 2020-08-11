@@ -5,6 +5,12 @@ import static java.util.Arrays.asList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Models the WarGame, contains the logic to run the game 
+ * 
+ * @author TJ
+ * @modifier Bryan Acorda
+ */
 public class WarGame extends Game {
 
     private WarPlayer player1 = new WarPlayer("Player 1");
@@ -224,8 +230,7 @@ public class WarGame extends Game {
             this.player1.setLosses(this.player1.getLosses() + 1);
         }
 
-        // Created a score ouput for each player, it doesn't work accurately as
-        // this is just a test. -Bryan
+        // Created a score ouput for each player. -Bryan
         String outputScore = String.format("\nGame Stats:\nPlayers : Wins : Losses\n%s : %s\n%s : %s",
                 this.player1.getName(), this.player1.getStats(), this.player2.getName(), this.player2.getStats());
         System.out.println(outputScore);

@@ -2,12 +2,13 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 
 /**
+ * This class models the GroupOfCards for the game War, it extends the
+ * GroupOfCards class and adds the ability to assemble cards from the Suit and
+ * Rank enums and also deal cards to each player.
  *
- * @author OtherUser
+ * @author Bryan Acorda
  */
 public class WarGroupOfCards extends GroupOfCards {
 

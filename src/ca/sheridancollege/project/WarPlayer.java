@@ -117,7 +117,7 @@ public class WarPlayer extends Player {
     }
 
     /**
-     * A toString that returna the name of the Player, makes it easier to print
+     * A toString that returns the name of the Player, makes it easier to print
      * without calling .getName() all the time.
      *
      * @return the name of player

@@ -1,9 +1,10 @@
 package ca.sheridancollege.project;
 
 /**
- * suit of type Suit enum rank of type Rank enum makes a war card with specific
+ * suit of type Suit enum, rank of type Rank enum makes a war card with specific
  * suit and rank
- *
+ * 
+ * @author Bryan Acorda
  */
 public class WarCard extends Card {
 
