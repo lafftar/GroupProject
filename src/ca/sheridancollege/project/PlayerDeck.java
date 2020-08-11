@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * @author OtherUser
+ * @author Bryan Acorda
  */
 public class PlayerDeck extends GroupOfCards {
 
