@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
+ * This models the each individual player deck which store cards in an array,
+ * has the ability to add cards, get cards from a specific index  and remove all
+ * cards from the deck.
+ * 
  * @author Bryan Acorda
  */
 public class PlayerDeck extends GroupOfCards {
@@ -21,6 +25,8 @@ public class PlayerDeck extends GroupOfCards {
 
     /**
     * Returns the cards of the PlayerDeck.
+    * 
+    * @return the super class getCards()
     */
     public ArrayList<WarCard> getPlayerDeck() {
         return super.getCards();

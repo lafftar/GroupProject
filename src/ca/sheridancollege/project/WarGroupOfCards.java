@@ -44,7 +44,7 @@ public class WarGroupOfCards extends GroupOfCards {
     /**
      * This method deals the mainDeck to the player's deck.
      *
-     * @param players
+     * @param players array list of each player
      *
      */
     // I just removed the main deck param, because it's always taking from its own deck
