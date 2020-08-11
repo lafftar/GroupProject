@@ -1,6 +1,7 @@
 package ca.sheridancollege.project;
 
 /**
+ * Models a WarCard which has programmer-defined values for it's suit and rank. 
  * suit of type Suit enum, rank of type Rank enum makes a war card with specific
  * suit and rank. Also returns a string representation of car card from toString 
  * 
