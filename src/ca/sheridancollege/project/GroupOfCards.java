@@ -1,8 +1,4 @@
-/**
- * SYST 17796 Project Base code.
- *
- * Date: 06-09-2020
- */
+
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
