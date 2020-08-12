@@ -1,9 +1,12 @@
 package ca.sheridancollege.project;
 
 /**
- * suit of type Suit enum rank of type Rank enum makes a war card with specific
- * suit and rank
- *
+ * Models a WarCard which has programmer-defined values for it's suit and rank. 
+ * suit of type Suit enum, rank of type Rank enum makes a war card with specific
+ * suit and rank. Also returns a string representation of car card from toString 
+ * 
+ * @author Bryan Acorda
+ * @author Ashley Sun
  */
 public class WarCard extends Card {
 
@@ -12,8 +15,9 @@ public class WarCard extends Card {
 
     /**
      * Constructs a WarCard with specified suit and rank.
-     * @param suit
-     * @param rank
+     * 
+     * @param s to assign suit
+     * @param r to assign rank
      */
     public WarCard(Suit s, Rank r) {
         suit = s;
@@ -30,7 +34,7 @@ public class WarCard extends Card {
 
     /**
      * Assigns a suit enum to this WarCard.
-     * @param suit
+     * @param suit assigns data member suit
      */
     public void setSuit(Suit suit) {
         this.suit = suit;
@@ -38,7 +42,7 @@ public class WarCard extends Card {
 
     /**
     * Retrieves the rank of this WarCard.
-    * @return rank
+    * @return rank data member
     */
     public Rank getRank() {
         return this.rank;
@@ -46,7 +50,7 @@ public class WarCard extends Card {
 
     /**
      * Assigns a rank enum to this WarCard.
-     * @param rank
+     * @param rank assigns data member rank
      */
     public void setRank(Rank rank) {
         this.rank = rank;

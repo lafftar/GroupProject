@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Base code.
  * Date: 06-09-2020
- * @Author: Bryan Acorda
+ * @author: Bryan Acorda
  * Group 3
  */
 package ca.sheridancollege.project;

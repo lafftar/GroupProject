@@ -1,9 +1,10 @@
 package ca.sheridancollege.project;
 
 /**
- * Models a player in the game War
+ * Models a player in the game War.
  *
  * @author Ashley Sun, 2020
+ * @author TJ
  */
 public class WarPlayer extends Player {
 
@@ -20,22 +21,24 @@ public class WarPlayer extends Player {
     private int losses = 0;
 
     /**
-    * Constructs a WarPlay object with specified name.
-    */
+     * Constructs a WarPlay object with specified name.
+     */
     public WarPlayer(String name) {
         super(name);
     }
 
     /**
-    * Retrieves the deck of WarPlayer.
-    * @return deck
-    */
+     * Retrieves the deck of WarPlayer.
+     *
+     * @return deck
+     */
     public PlayerDeck getDeck() {
         return this.deck;
     }
 
     /**
      * Assigns a deck of WarCards to the player.
+     *
      * @param deck of the WarPlayer
      */
     public void setDeck(PlayerDeck deck) {
@@ -52,15 +55,17 @@ public class WarPlayer extends Player {
     }
 
     /**
-    * Retrieve the number of rounds won by the player.
-    * @return score
-    */
+     * Retrieve the number of rounds won by the player.
+     *
+     * @return score
+     */
     public int getScore() {
         return this.score;
     }
 
     /**
      * Assigns a score to the player.
+     *
      * @param score
      */
     public void setScore(int score) {
@@ -69,33 +74,37 @@ public class WarPlayer extends Player {
 
     // getter and setter for wins and losses
     /**
-    * Retrieves the number of games won of this WarPlayer.
-    * @return wins
-    */
+     * Retrieves the number of games won of this WarPlayer.
+     *
+     * @return wins
+     */
     public int getWins() {
         return wins;
     }
 
     /**
-    * Sets the number of wins to this WarPlayer.
-    * @param wins
-    */
+     * Sets the number of wins to this WarPlayer.
+     *
+     * @param wins
+     */
     public void setWins(int wins) {
         this.wins = wins;
     }
 
     /**
-    * Retrieves the number of games lost of this WarPlayer.
-    * @return losses
-    */
+     * Retrieves the number of games lost of this WarPlayer.
+     *
+     * @return losses
+     */
     public int getLosses() {
-        return losses++;
+        return losses;
     }
 
     /**
-    * Sets the losses member.
-    * @param losses
-    */
+     * Sets the losses member.
+     *
+     * @param losses
+     */
     public void setLosses(int losses) {
         this.losses = losses;
     }
@@ -110,14 +119,8 @@ public class WarPlayer extends Player {
         return String.format("%d : %d", wins, losses);
     }
 
-    // to delete
-    @Override
-    public Card play() {
-        return this.play();
-    }
-
     /**
-     * A toString that returna the name of the Player, makes it easier to print
+     * A toString that returns the name of the Player, makes it easier to print
      * without calling .getName() all the time.
      *
      * @return the name of player
