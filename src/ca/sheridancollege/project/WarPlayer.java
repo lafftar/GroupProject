@@ -3,16 +3,14 @@ package ca.sheridancollege.project;
 /**
  * Models a player in the game War.
  *
- * @author Ashley Sun, 2020
- * @author TJ
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarPlayer extends Player {
 
     // playerDeck - player's hand of cards
     private PlayerDeck deck = new PlayerDeck();
-
-    // score - how many rounds the player won
-    private int score = 0;
 
     // # of games won
     private int wins = 0;
@@ -54,24 +52,6 @@ public class WarPlayer extends Player {
         return deck.getCardFromDeck(0);
     }
 
-    /**
-     * Retrieve the number of rounds won by the player.
-     *
-     * @return score
-     */
-    public int getScore() {
-        return this.score;
-    }
-
-    /**
-     * Assigns a score to the player.
-     *
-     * @param score
-     */
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     // getter and setter for wins and losses
     /**
      * Retrieves the number of games won of this WarPlayer.
@@ -103,7 +83,7 @@ public class WarPlayer extends Player {
     /**
      * Sets the losses member.
      *
-     * @param losses
+     * @param losses passed to set data variable losses
      */
     public void setLosses(int losses) {
         this.losses = losses;

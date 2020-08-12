@@ -1,12 +1,13 @@
 package ca.sheridancollege.project;
 
 /**
- * Models a WarCard which has programmer-defined values for it's suit and rank. 
+ * Models a WarCard which has programmer-defined values for it's suit and rank.
  * suit of type Suit enum, rank of type Rank enum makes a war card with specific
- * suit and rank. Also returns a string representation of car card from toString 
- * 
- * @author Bryan Acorda
+ * suit and rank. Also returns a string representation of car card from toString
+ *
  * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarCard extends Card {
 
@@ -15,7 +16,7 @@ public class WarCard extends Card {
 
     /**
      * Constructs a WarCard with specified suit and rank.
-     * 
+     *
      * @param s to assign suit
      * @param r to assign rank
      */
@@ -25,15 +26,17 @@ public class WarCard extends Card {
     }
 
     /**
-    * Retrieves the suit of this WarCard.
-    * @return suit
-    */
+     * Retrieves the suit of this WarCard.
+     *
+     * @return suit
+     */
     public Suit getSuit() {
         return this.suit;
     }
 
     /**
      * Assigns a suit enum to this WarCard.
+     *
      * @param suit assigns data member suit
      */
     public void setSuit(Suit suit) {
@@ -41,15 +44,17 @@ public class WarCard extends Card {
     }
 
     /**
-    * Retrieves the rank of this WarCard.
-    * @return rank data member
-    */
+     * Retrieves the rank of this WarCard.
+     *
+     * @return rank data member
+     */
     public Rank getRank() {
         return this.rank;
     }
 
     /**
      * Assigns a rank enum to this WarCard.
+     *
      * @param rank assigns data member rank
      */
     public void setRank(Rank rank) {
@@ -58,12 +63,12 @@ public class WarCard extends Card {
 
     /**
      * Returns this WarCard as a String.
-     * 
+     *
      * @return a string representation of this WarCard
      */
     @Override
     public String toString() {
-        return this.getRank().getDisplayRank() + " of " 
+        return this.getRank().getDisplayRank() + " of "
                 + this.getSuit().getDisplaySuit();
     }
 }

@@ -1,4 +1,3 @@
-
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
@@ -8,14 +7,16 @@ import java.util.ArrayList;
  * GroupOfCards class and adds the ability to assemble cards from the Suit and
  * Rank enums and also deal cards to each player.
  *
+ * @author Ashley Sun
  * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarGroupOfCards extends GroupOfCards {
 
     /**
-    * Creates a WarGroupOfCards object with 52 WarCards.
-    * It is assembled with WarCards and shuffled.
-    */
+     * Creates a WarGroupOfCards object with 52 WarCards. It is assembled with
+     * WarCards and shuffled.
+     */
     public WarGroupOfCards() {
         super(52);
         this.assembleCards();
@@ -23,18 +24,18 @@ public class WarGroupOfCards extends GroupOfCards {
     }
 
     // assembleCards() method is private because it shouldn't be used elsewhere - TJ
-    private void assembleCards() { 
-        
+    private void assembleCards() {
+
         // Create a reference for WarCard. -Bryan
         WarCard card;
-        
+
         // Assembling the deck from the cards created in the Card class
         for (Suit suit : Suit.values()) {
-            
+
             for (Rank rank : Rank.values()) {
                 // initialized the card variable here -Bryan
                 card = new WarCard(suit, rank);
-                
+
                 // would make sense to put the reference outside the for loop for performance sake - TJ
                 this.getCards().add(card);
             }

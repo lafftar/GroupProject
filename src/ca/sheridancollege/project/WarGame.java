@@ -8,9 +8,9 @@ import java.util.Scanner;
  * Models the WarGame, contains the logic to run the game, extends the 'Game'
  * class
  *
+ * @author Ashley Sun
  * @author Bryan Acorda
  * @author Tibabalase Oludemi
- * @author Ashley YOUR LAST NAME HERE ASHLEY
  */
 public class WarGame extends Game {
 
