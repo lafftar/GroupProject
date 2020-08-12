@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class WarGroupOfCards extends GroupOfCards {
 
     /**
-    * Creates a WarGroupOfCards object with 52 WarCards.
-    * It is assembled with WarCards and shuffled.
+    * This constructor creates a WarGroupOfCards object with 52 WarCards.
+    * It is assembled with WarCards and then shuffled.
     */
     public WarGroupOfCards() {
         super(52);
@@ -22,20 +22,20 @@ public class WarGroupOfCards extends GroupOfCards {
         super.shuffle();
     }
 
-    // assembleCards() method is private because it shouldn't be used elsewhere - TJ
+    // assembleCards() method is private because it shouldn't be used elsewhere
     private void assembleCards() { 
         
-        // Create a reference for WarCard. -Bryan
+        // Create a reference for WarCard
         WarCard card;
         
         // Assembling the deck from the cards created in the Card class
         for (Suit suit : Suit.values()) {
             
             for (Rank rank : Rank.values()) {
-                // initialized the card variable here -Bryan
+                // initialized the card variable
                 card = new WarCard(suit, rank);
                 
-                // would make sense to put the reference outside the for loop for performance sake - TJ
+                // adds new WarCard to the deck
                 this.getCards().add(card);
             }
         }
@@ -47,7 +47,6 @@ public class WarGroupOfCards extends GroupOfCards {
      * @param players array list of each player
      *
      */
-    // I just removed the main deck param, because it's always taking from its own deck
     public void dealToPlayerDeck(ArrayList<WarPlayer> players) {
         ArrayList<WarCard> allCards = this.getCards(); // reduces calls to the .getCards() method
         for (int i = 0; i < 2; i++) {
@@ -59,5 +58,4 @@ public class WarGroupOfCards extends GroupOfCards {
             allCards.removeAll(players.get(i).getDeck().getCards());
         }
     }
-
 }

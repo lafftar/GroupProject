@@ -103,7 +103,7 @@ public class WarPlayer extends Player {
     /**
      * Sets the losses member.
      *
-     * @param losses
+     * @param losses passed to set data variable losses
      */
     public void setLosses(int losses) {
         this.losses = losses;
