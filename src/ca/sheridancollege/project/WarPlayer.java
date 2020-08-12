@@ -1,7 +1,7 @@
 package ca.sheridancollege.project;
 
 /**
- * Models a player in the game War
+ * Models a player in the game War.
  *
  * @author Ashley Sun, 2020
  * @author TJ
