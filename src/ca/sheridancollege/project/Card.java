@@ -1,9 +1,3 @@
-/**
- * SYST 17796 Project Base code.
- * Date: 06-09-2020
- * @Author: Bryan Acorda
- * Group 3
- */
 package ca.sheridancollege.project;
 
 /**
@@ -12,6 +6,9 @@ package ca.sheridancollege.project;
  * code should remember to add themselves as a modifier.
  *
  * @author dancye
+ * @modifier Ashley Sun
+ * @modifer Bryan Acorda
+ * @modifer Tibabalase Oludemi
  */
 public abstract class Card {
     //default modifier for child classes

@@ -1,83 +1,111 @@
 package ca.sheridancollege.project;
 
 /**
- * Models a player in the game War
+ * Models a player in the game War.
  *
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarPlayer extends Player {
 
-    /**
-     * playerDeck - player's hand of cards
-     */
-    private PlayerDeck deck;
-    /**
-     * score - how many rounds the player won
-     */
-    private int score;
-    /**
-     * stats - how many games the player won
-     *
-     */
-    private double stats;
+    // playerDeck - player's hand of cards
+    private PlayerDeck deck = new PlayerDeck();
 
+    // # of games won
+    private int wins = 0;
+
+    // # of games lost
+    private int losses = 0;
+
+    /**
+     * Constructs a WarPlay object with specified name.
+     */
+    public WarPlayer(String name) {
+        super(name);
+    }
+
+    /**
+     * Retrieves the deck of WarPlayer.
+     *
+     * @return deck
+     */
     public PlayerDeck getDeck() {
         return this.deck;
     }
 
     /**
+     * Assigns a deck of WarCards to the player.
      *
-     * @param deck
+     * @param deck of the WarPlayer
      */
     public void setDeck(PlayerDeck deck) {
         this.deck = deck;
     }
 
     /**
-     * returns a war card from the player's playerDeck arraylist
+     * Returns the first card in the player's deck.
      *
+     * @return a war card
      */
     public WarCard drawCard() {
-        // TODO - implement WarPlayer.drawCard
-        throw new UnsupportedOperationException();
+        return deck.getCardFromDeck(0);
     }
 
-    public int getScore() {
-        return this.score;
+    // getter and setter for wins and losses
+    /**
+     * Retrieves the number of games won of this WarPlayer.
+     *
+     * @return wins
+     */
+    public int getWins() {
+        return wins;
     }
 
     /**
+     * Sets the number of wins to this WarPlayer.
      *
-     * @param score
+     * @param wins
      */
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public double getStats() {
-        return this.stats;
+    public void setWins(int wins) {
+        this.wins = wins;
     }
 
     /**
+     * Retrieves the number of games lost of this WarPlayer.
      *
-     * @param stats
+     * @return losses
      */
-    public void setStats(double stats) {
-        this.stats = stats;
+    public int getLosses() {
+        return losses;
     }
 
-    public void calcStats() {
-        // TODO - implement WarPlayer.calcStats
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the losses member.
+     *
+     * @param losses passed to set data variable losses
+     */
+    public void setLosses(int losses) {
+        this.losses = losses;
     }
 
-    public void calcScore() {
-        // TODO - implement WarPlayer.calcScore
-        throw new UnsupportedOperationException();
+    /**
+     * Returns a String representing how many games the player won vs lost.
+     * i.e., 2 : 0, is two games won and 0 games lost
+     *
+     * @return the stats the players game
+     */
+    public String getStats() {
+        return String.format("%d : %d", wins, losses);
     }
 
-    @Override
-    public void play() {
-
+    /**
+     * A toString that returns the name of the Player, makes it easier to print
+     * without calling .getName() all the time.
+     *
+     * @return the name of player
+     */
+    public String toString() {
+        return this.getName();
     }
-
 }

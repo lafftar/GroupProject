@@ -1,52 +1,86 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
+/**
+ * This models the each individual player deck which store cards in an array.
+ * The PlayerDeck class has the ability to add cards, get cards from a specific
+ * index and remove all cards from the deck.
+ *
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
+ */
 public class PlayerDeck extends GroupOfCards {
 
-    private ArrayList<WarCard> playerDeck;
-    private String nameofDeck;
+    /**
+     * Constructs a PlayerDeck object with 26 cards of type WarCard.
+     *
+     */
+    public PlayerDeck() {
+        super(26);
+    }
 
+    /**
+     * Constructs a Playerdeck arrayList with a programmer-specified size.
+     *
+     * @param size of arrayList
+     */
+    public PlayerDeck(int size) {
+        super(size);
+    }
+
+    /**
+     * Returns the cards of the PlayerDeck.
+     *
+     * @return the super class getCards()
+     */
     public ArrayList<WarCard> getPlayerDeck() {
-        return this.playerDeck;
+        return super.getCards();
     }
 
     /**
+     * Removes all cards from the player's deck.
      *
-     * @param playerDeck
      */
-    public void setPlayerDeck(ArrayList<WarCard> playerDeck) {
-        this.playerDeck = playerDeck;
-    }
+    public void wipePlayerDeck() {
+        ArrayList<WarCard> playerDeckCards = this.getPlayerDeck();
+        Iterator<WarCard> iterator = playerDeckCards.iterator();
+        while (iterator.hasNext()) {
+            WarCard check = iterator.next();
+            iterator.remove();
+        }
 
-    public String getNameofDeck() {
-        return this.nameofDeck;
     }
 
     /**
+     * Adds a specified WarCard to the player deck.
      *
-     * @param nameofDeck
+     * @param WaraCard card
      */
-    public void setNameofDeck(String nameofDeck) {
-        this.nameofDeck = nameofDeck;
+    public void addCardToPlayerDeck(WarCard card) {
+        super.getCards().add(card);
     }
 
     /**
-     * use method to remove specific cards from the playerDeck -- not sure how
-     * to implement this method
+     * Returns the card at the specific index.
+     *
+     * @param cardIndex
+     * @return the specific war card
      */
-    public void removeCards() {
-        // TODO - implement PlayerDeck.removeCards
-        throw new UnsupportedOperationException();
+    public WarCard getCardFromDeck(int cardIndex) {
+        return super.getCards().get(cardIndex);
     }
 
     /**
-     * use method to add specific cards to the playerDeck -- not sure how to
-     * implement this method
+     * Retrieves the size of the player's deck.
+     *
+     * @return size of deck
      */
-    public void addCards() {
-        // TODO - implement PlayerDeck.addCards
-        throw new UnsupportedOperationException();
+    @Override
+    public int getSize() {
+        return super.getCards().size();
     }
 
 }

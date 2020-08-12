@@ -1,47 +1,52 @@
 package ca.sheridancollege.project;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * The class that models your game. You should create a more specific child of
  * this class and instantiate the methods given.
  *
  * @author dancye
- * @author Paul Bonenfant Jan 2020
- *
- * the Game constructor is protected so it can only be instantiated by it's
- * child class, WarGame
- * @author Ashley Sun, Aug 2020
- *
+ * @author Paul Bonenfant
+ * @modifier Ashley Sun
+ * @modifier Bryan Acorda
+ * @modifier Tibabalase Oludemi
  */
 public abstract class Game {
 
-    private final String name;
-    /**
-     * the title of the game
-     */
-    private Collection<Player> players;
+    private final String name;//the title of the game
+    private ArrayList<Player> players;// the players of the game
 
+    /**
+     * This constructor passes a string to the parameters to set the name, and 
+     * also initializes the players list.
+     * 
+     * @param name 
+     */
+    public Game(String name) {
+        this.name = name;
+        players = new ArrayList();
+    }
+
+    /**
+     * @return the name
+     */
     public String getName() {
-        return this.name;
-    }
-
-    public Collection<Player> getPlayers() {
-        return this.players;
-    }
-
-    public void setPlayers(Collection<Player> players) {
-        this.players = players;
+        return name;
     }
 
     /**
-     * the players of the game
-     *
-     * @param name
+     * @return the players of this game
      */
-    protected Game(String name) {
-        // TODO - implement Game.Game
-        throw new UnsupportedOperationException();
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    /**
+     * @param players the players of this game
+     */
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
     }
 
     /**
@@ -56,4 +61,4 @@ public abstract class Game {
      */
     public abstract void declareWinner();
 
-}
+}//end class

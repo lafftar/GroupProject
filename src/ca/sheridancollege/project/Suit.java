@@ -1,30 +1,37 @@
 package ca.sheridancollege.project;
 
 /**
+ * Enumeration for the suit of a war card.
  *
- * Enum for the suit of a war card. displaySuit : String, a string
- * representation of the suit i.e., "Spades"
- *
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public enum Suit {
-    CLUBS,
-    HEARTS,
-    DIAMONDS,
-    SPADES;
+    CLUBS("Clubs"),
+    HEARTS("Hearts"),
+    DIAMONDS("Diamonds"),
+    SPADES("Spades");
 
+    //A String representation of the suit
     private String displaySuit;
 
+    /**
+     * Retrieve the String representation of this suit
+     *
+     * @return displaySuit
+     */
     public String getDisplaySuit() {
         return this.displaySuit;
     }
 
     /**
+     * Private constructor, is not instantiated outside of enum class.
      *
      * @param suit
      */
     private Suit(String suit) {
-        // TODO - implement Suit.Suit
-        throw new UnsupportedOperationException();
+        displaySuit = suit;
     }
 
 }
