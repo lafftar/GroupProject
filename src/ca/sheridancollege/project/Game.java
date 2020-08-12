@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * @author dancye
  * @author Paul Bonenfant
  * @modifier Ashley Sun
- * @modifer Bryan Acorda
- * @modifer Tibabalase Oludemi
+ * @modifier Bryan Acorda
+ * @modifier Tibabalase Oludemi
  */
 public abstract class Game {
 
