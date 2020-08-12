@@ -1,4 +1,3 @@
-
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
@@ -8,34 +7,36 @@ import java.util.ArrayList;
  * GroupOfCards class and adds the ability to assemble cards from the Suit and
  * Rank enums and also deal cards to each player.
  *
+ * @author Ashley Sun
  * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarGroupOfCards extends GroupOfCards {
 
     /**
-    * This constructor creates a WarGroupOfCards object with 52 WarCards.
-    * It is assembled with WarCards and then shuffled.
-    */
+     * Creates a WarGroupOfCards object with 52 WarCards. It is assembled with
+     * WarCards and shuffled.
+     */
     public WarGroupOfCards() {
         super(52);
         this.assembleCards();
         super.shuffle();
     }
 
-    // assembleCards() method is private because it shouldn't be used elsewhere
-    private void assembleCards() { 
-        
-        // Create a reference for WarCard
+    // assembleCards() method is private because it shouldn't be used elsewhere - TJ
+    private void assembleCards() {
+
+        // Create a reference for WarCard. -Bryan
         WarCard card;
-        
+
         // Assembling the deck from the cards created in the Card class
         for (Suit suit : Suit.values()) {
-            
+
             for (Rank rank : Rank.values()) {
-                // initialized the card variable
+                // initialized the card variable here -Bryan
                 card = new WarCard(suit, rank);
-                
-                // adds new WarCard to the deck
+
+                // would make sense to put the reference outside the for loop for performance sake - TJ
                 this.getCards().add(card);
             }
         }
@@ -47,6 +48,7 @@ public class WarGroupOfCards extends GroupOfCards {
      * @param players array list of each player
      *
      */
+    // I just removed the main deck param, because it's always taking from its own deck
     public void dealToPlayerDeck(ArrayList<WarPlayer> players) {
         ArrayList<WarCard> allCards = this.getCards(); // reduces calls to the .getCards() method
         for (int i = 0; i < 2; i++) {
@@ -58,4 +60,5 @@ public class WarGroupOfCards extends GroupOfCards {
             allCards.removeAll(players.get(i).getDeck().getCards());
         }
     }
+
 }

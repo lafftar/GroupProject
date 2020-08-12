@@ -5,43 +5,45 @@ import java.util.Iterator;
 
 /**
  * This models the each individual player deck which store cards in an array.
- * The PlayerDeck class has the ability to add cards, get cards from a specific 
- * index  and remove all cards from the deck.
- * 
+ * The PlayerDeck class has the ability to add cards, get cards from a specific
+ * index and remove all cards from the deck.
+ *
+ * @author Ashley Sun
  * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class PlayerDeck extends GroupOfCards {
 
     /**
-    * Constructs a PlayerDeck object with 26 cards of type WarCard.
-    *
-    */
+     * Constructs a PlayerDeck object with 26 cards of type WarCard.
+     *
+     */
     public PlayerDeck() {
         super(26);
     }
 
     /**
-    * Constructs a Playerdeck arrayList with a programmer-specified size.
-    *
-    * @param size of arrayList
-    */
+     * Constructs a Playerdeck arrayList with a programmer-specified size.
+     *
+     * @param size of arrayList
+     */
     public PlayerDeck(int size) {
         super(size);
     }
 
     /**
-    * Returns the cards of the PlayerDeck.
-    * 
-    * @return the super class getCards()
-    */
+     * Returns the cards of the PlayerDeck.
+     *
+     * @return the super class getCards()
+     */
     public ArrayList<WarCard> getPlayerDeck() {
         return super.getCards();
     }
 
     /**
-    * Removes all cards from the player's deck.
-    *
-    */
+     * Removes all cards from the player's deck.
+     *
+     */
     public void wipePlayerDeck() {
         ArrayList<WarCard> playerDeckCards = this.getPlayerDeck();
         Iterator<WarCard> iterator = playerDeckCards.iterator();
@@ -52,7 +54,6 @@ public class PlayerDeck extends GroupOfCards {
 
     }
 
-  
     /**
      * Adds a specified WarCard to the player deck.
      *
@@ -73,10 +74,10 @@ public class PlayerDeck extends GroupOfCards {
     }
 
     /**
-    * Retrieves the size of the player's deck.
-    *
-    * @return size of deck
-    */
+     * Retrieves the size of the player's deck.
+     *
+     * @return size of deck
+     */
     @Override
     public int getSize() {
         return super.getCards().size();

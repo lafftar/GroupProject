@@ -5,39 +5,46 @@ import static java.util.Arrays.asList;
 import java.util.Scanner;
 
 /**
- * Models the WarGame, contains the logic to run the game
+ * Models the WarGame, contains the logic to run the game, extends the 'Game'
+ * class
  *
- * @author TJ
- * @modifier Bryan Acorda
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarGame extends Game {
 
     private WarPlayer player1 = new WarPlayer("Player 1");
     private WarPlayer player2 = new WarPlayer("Player 2");
     private PlayerDeck placeholderDeck = new PlayerDeck(0); // deck to hold cards that are discarded in the war round
-    ArrayList<WarCard> playerCards;
 
     // for easier access to last player card for each player
     private WarCard player1Card;
     private WarCard player2Card;
 
-    // allows us to declare gameOver in warInitiated  and other methods
+    // allows us to declare gameOver in warInitiated and other methods
     // and have it carry over to the distributeWinnings() method
     private boolean gameOver = false;
 
     // allows us to stop the game after 1000 rounds have been played, and declare the player with most cards the winner
     private int numRounds = 0;
 
+    /**
+     * Constructs the WarGame object
+     *
+     * @param name the name of the game, in this instance "War" is expected
+     */
     public WarGame(String name) {
         super(name);
     }
 
     /**
-     * Compares two War Cards based on their rank and returns 0 - if card 1 is
-     * greater, 1 if card 2 is greater, 2 if they are the same.
+     * Compares two War Cards based on their rank and returns 0 - if player card
+     * 1 is greater, 1 if player card 2 is greater, 2 if they are the same.
      *
-     * @param card1
-     * @param card2
+     * @param card1 player 1's card
+     * @param card2 player 2's card
+     * @return int reflecting who's card is greater, or if they're equal
      */
     public int compareCards(WarCard card1, WarCard card2) {
         // returns values 0, 1, 2 depending on which players card won
@@ -50,7 +57,11 @@ public class WarGame extends Game {
         return 2; // if players cards are the same, war condition
     }
 
-    // returns the player with less cards
+    /**
+     * Returns the player with less cards
+     *
+     * @return the player with the lowest cards
+     */
     private WarPlayer returnPlayerWithLowerCards() {
         if (this.player1.getDeck().getSize() < this.player2.getDeck().getSize()) {
             return this.player1;
@@ -59,10 +70,8 @@ public class WarGame extends Game {
     }
 
     /**
-     * Initiates war takes out 4 cards from the playerDeck puts the first 3 in
-     * the placeholder deck returns the last card.
+     * Initiates war between players.
      *
-     * @return
      */
     public void warInitiated() {
 
@@ -108,7 +117,7 @@ public class WarGame extends Game {
     }
 
     /**
-     * This method handles distribution of cards when a player wins a round
+     * This method handles distribution of cards when a player wins a round.
      *
      */
     public void distributeWinnings() {
@@ -146,7 +155,8 @@ public class WarGame extends Game {
 
     /**
      * This method declares a winner and increments the winning score of each
-     * player
+     * player. Overrides the .declareWinner() method from the 'Game' parent
+     * class.
      *
      */
     @Override
@@ -179,7 +189,8 @@ public class WarGame extends Game {
     }
 
     /**
-     * This method resets all values from each player
+     * This method resets all values from each player. Resets the game back to
+     * basics.
      *
      */
     private void resetGame() {
@@ -192,8 +203,8 @@ public class WarGame extends Game {
     }
 
     /**
-     * This method increments the rounds and checks and stops game after 1000
-     * increments
+     * This method increments the rounds, checks and stops game after 1000
+     * increments.
      *
      */
     private void incrementNumRounds() {
@@ -205,7 +216,12 @@ public class WarGame extends Game {
         }
     }
 
+    /**
+     * Provides the intro screen/instructions for players. Sleeps for a second,
+     * then allows users to input to continue the game.
+     */
     private void introText() {
+        System.out.println("\n" + "#".repeat(150));
         System.out.println("This is the game of War.\n\n"
                 + "INSTRUCTIONS:"
                 + "\n-The objective of the game is to win all of the cards.\n"
@@ -219,12 +235,16 @@ public class WarGame extends Game {
                 + "-This game is in auto-play mode, the War card game can sometimes take up to an hour to complete! "
                 + "This will complete in a few seconds.\n"
                 + "-If more than 1,000 rounds occur in the game, the player with the most cards wins.\n"
-                + "-If there is a tie, both players get a win.\n\n");
-        this.sleepForOneSecond();
+                + "-If there is a tie, both players get a win.");
+        System.out.println("#".repeat(150) + "\n\n");
+        WarGame.sleepForOneSecond();
         System.out.println("Press the 'enter' key to carry on with the game: ");
         new Scanner(System.in).nextLine();
     }
 
+    /**
+     * This method pauses execution of the whole program.
+     */
     public static void sleepForOneSecond() {
         try {
             Thread.sleep(1000);
@@ -260,10 +280,10 @@ public class WarGame extends Game {
         System.out.print("\nGame begins in");
         for (int i = 3; i > 0; i--) {
             System.out.print(String.format(" %d", i));
-            this.sleepForOneSecond();
+            WarGame.sleepForOneSecond();
         }
         System.out.println("\nGo!\n\n");
-        this.sleepForOneSecond();
+        WarGame.sleepForOneSecond();
 
         // first we create the wargroupofcards, it's created, assembled and shuffled in the wargroupofcards class
         WarGroupOfCards allCards = new WarGroupOfCards();
@@ -282,7 +302,7 @@ public class WarGame extends Game {
             System.out.println(String.format("%s Drew: %s", this.player1.getName(), player1Card));
             System.out.println(String.format("%s Drew: %s", this.player2.getName(), player2Card));
 
-            // take 1 card from  each player, add to placeholder deck
+            // take 1 card from each player, add to placeholder deck
             this.placeholderDeck.addCardToPlayerDeck(player1Card);
             this.placeholderDeck.addCardToPlayerDeck(player2Card);
 
