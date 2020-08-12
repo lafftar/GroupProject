@@ -3,8 +3,9 @@ package ca.sheridancollege.project;
 /**
  * Models a player in the game War.
  *
- * @author Ashley Sun, 2020
- * @author TJ
+ * @author Ashley Sun
+ * @author Bryan Acorda
+ * @author Tibabalase Oludemi
  */
 public class WarPlayer extends Player {
 
