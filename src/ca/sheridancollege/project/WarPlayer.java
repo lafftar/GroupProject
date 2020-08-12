@@ -12,9 +12,6 @@ public class WarPlayer extends Player {
     // playerDeck - player's hand of cards
     private PlayerDeck deck = new PlayerDeck();
 
-    // score - how many rounds the player won
-    private int score = 0;
-
     // # of games won
     private int wins = 0;
 
@@ -53,24 +50,6 @@ public class WarPlayer extends Player {
      */
     public WarCard drawCard() {
         return deck.getCardFromDeck(0);
-    }
-
-    /**
-     * Retrieve the number of rounds won by the player.
-     *
-     * @return score
-     */
-    public int getScore() {
-        return this.score;
-    }
-
-    /**
-     * Assigns a score to the player.
-     *
-     * @param score
-     */
-    public void setScore(int score) {
-        this.score = score;
     }
 
     // getter and setter for wins and losses
